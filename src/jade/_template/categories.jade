@@ -1,0 +1,65 @@
+-
+    var categoriesArr = [
+        "Ed Packs",
+        "Erectile Dysfunction",
+        "Antiviral",
+        "Anti-acidity",
+        "Anti-allergy/asthma",
+        "Anti-depressant",
+        "Skin Care",
+        "Ed Packs",
+        "Erectile Dysfunction",
+        "Antiviral",
+        "Anti-acidity",
+        "Anti-allergy/asthma",
+        "Anti-depressant",
+        "Skin Care",
+        "Antiviral",
+        "Anti-acidity",
+        "Anti-allergy/asthma",
+        "Anti-depressant",
+        "Skin Care",
+        "Anti-acidity",
+        "Anti-allergy/asthma",
+        "Anti-depressant",
+        "Skin Care",
+        "Antiviral",
+        "Anti-acidity",
+        "Anti-allergy/asthma",
+        "Anti-depressant",
+        "Skin Care",
+        "Anti-depressant",
+        "Skin Care"
+    ];
+
+
+.categories
+    -for(var i = 0; i < 30; i++)
+        div(
+            class!= (i === 0) ? "categories__box active" : "categories__box"
+        )
+            a(
+                href="javascript:void(0);"
+                title=categoriesArr[i]
+                class="categories__title btn-categories-js"
+            )
+                span.categories__title-text!= categoriesArr[i]
+                i.categories__title-icon
+
+            .categories__drop
+                if(i === 0)
+                    .row_shadow.row_categories
+                        // class for modify product position: [product_grid, product_list, product_gallery]
+                        .product.product_grid.product_best.clearfix
+                            +productBox(10, true, false)
+
+                    +btnViewAll("btn__view_left btn__view_categories")
+                else
+                    -for(var j = 0; j < 10; j++)
+                        a(
+                            href="javascript:void(0);"
+                            title=categoriesArr[j]
+                            class="categories__row clearfix"
+                        )
+                            span.categories__row-name!= categoriesArr[j]
+                            span.categories__row-price!= "<span class='categories__row-price--text'>from</span> $2.80"

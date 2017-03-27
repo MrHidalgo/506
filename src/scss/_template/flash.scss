@@ -1,0 +1,280 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN
+///
+.flash {
+	margin: {
+		top: 25px;
+		bottom: 25px;
+	}
+	text-align: center;
+	@include respond-to(small-max) {
+		margin: {
+			top: 0;
+			bottom: 0;
+		}
+	}
+
+
+	&__block {
+		width: 360px;
+		min-height: 195px;
+		background-color: $c-black;
+		text-align: left;
+
+
+		&_left,
+		&_right {
+			@include respond-to(large-max) {
+				width: (940px / 2) - 12.5;
+			}
+			@include respond-to(medium) {
+				width: calc((100% - (50px + 25px)) / 2);
+			}
+			@include respond-to(small-max) {
+				width: $w-all;
+			}
+		}
+
+
+		&_left {
+			float: left;
+			@include respond-to(large-max) {
+				margin-right: 12.5px;
+			}
+			@include respond-to(medium) {
+				margin-left: 25px;
+			}
+		}
+		&_center {
+			display: inline-block;  *display: inline;  *zoom: 1;
+			vertical-align: top;
+			@include respond-to(large-max) {
+				display: none;
+			}
+		}
+		&_right {
+			float: right;
+			@include respond-to(large-max) {
+				margin-left: 12.5px;
+			}
+			@include respond-to(medium) {
+				margin-right: 25px;
+			}
+			@include respond-to(small-max) {
+				display: none;
+			}
+		}
+	}
+
+
+	&__title {
+		position: relative;
+		z-index: 5;
+		line-height: 44px;
+		color: $c-white;
+		font: {
+			size: 20px;
+			family: $f-RW-heavy;
+		};
+
+
+		&-icon {
+			display: inline-block;  *display: inline;  *zoom: 1;
+			vertical-align: middle;
+			margin-right: 5px;
+			margin-left: 15px;
+			@include retina-sprite($sp-i-flash-group);
+		}
+
+
+		&-sale {
+			position: absolute;
+			z-index: 5;
+			top: 8px;
+			right: 0;
+			min-width: 90px;
+			height: 28px;
+			line-height: 28px;
+			background-color: $c-radical-red;
+			color: $c-white;
+			font: {
+				size: 14px;
+				family: $f-R-bold;
+			};
+			text-align: center;
+
+
+			&-icon {
+				position: absolute;
+				left: -12px;
+				top: 0;
+				@include retina-sprite($sp-i-slider-free-arr-right-group);
+			}
+		}
+	}
+
+
+	&__header {
+		position: relative;
+		height: 44px;
+
+
+		&-line {
+			position: absolute;
+			z-index: 0;
+			left: 0;
+			top: 20px;
+			@include mixinDimensions($w-all, 4px);
+			background-color: $c-nero;
+		}
+	}
+
+
+	&__img {
+		display: inline-block;  *display: inline;  *zoom: 1;
+		width: 75px;
+
+
+		&-wrap {
+			float: left;
+			width: 150px;
+			text-align: center;
+		}
+	}
+
+
+	&__info {
+		position: relative;
+		padding-right: 25px;
+		padding-left: 150px;
+
+
+		&-title {
+			font: {
+				size: 14px;
+				family: $f-R-bold;
+			};
+			color: $c-white;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+
+
+	&__desc {
+		font: {
+			size: 12px;
+		};
+		color: $c-white;
+	}
+
+
+	&__price {
+		position: relative;
+		display: inline-block;  *display: inline;  *zoom: 1;
+		vertical-align: middle;
+		text-align: center;
+		line-height: 18px;
+		color: $c-lemon;
+		font: {
+			size: 15px;
+			family: $f-R-medium;
+		}
+
+
+		&-text {
+			position: relative;
+			z-index: 5;
+			padding: {
+				left: 10px;
+				right: 10px;
+			};
+		}
+
+
+		&-bg {
+			position: absolute;
+			top: 1px;
+			min-width: 0;
+			height: 16px;
+			left: 47px;
+			right: 31px;
+			background-color: #474747;
+		}
+
+
+		&-bg-left,
+		&-bg-right {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+		}
+		&-bg-left {
+			left: 0;
+			@include retina-sprite($sp-i-flash-gray-bg-left-group);
+		}
+		&-bg-right {
+			right: 0;
+			@include retina-sprite($sp-i-flash-gray-bg-right-group);
+		}
+
+
+		&-old {
+			position: relative;
+			float: left;
+			color: $c-grey-suit;
+			font: {
+				size: 14px;
+			};
+
+
+			&-line {
+				position: absolute;
+				top: 10px;
+				left: 0;
+				@include mixinDimensions($w-all, 1px);
+				background-color: $c-radical-red;
+				transform: rotate(-7deg);
+			}
+		}
+	}
+
+
+	&__per {
+		display: inline-block;  *display: inline;  *zoom: 1;
+		vertical-align: middle;
+		margin-left: -5px;
+		font-size: 14px;
+		color: $c-white;
+	}
+
+
+	&__footer {
+		padding: {
+			top: 10px;
+			bottom: 15px;
+		}
+	}
+
+
+	&__timer,
+	&__btn {
+		display: inline-block;  *display: inline;  *zoom: 1;
+		vertical-align: middle;
+		margin-right: -5px;
+	}
+
+	&__timer {
+		width: 150px;
+		color: $c-white;
+		font-size: 14px;
+		text-align: center;
+	}
+}

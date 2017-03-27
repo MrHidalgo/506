@@ -1,0 +1,24 @@
+
+// add class .search__active for visible search result
+.search
+    .search__row
+
+
+        include ./_macros/_search/search-wrap
+
+
+        a(
+            href="javascript:void(0);"
+            title="Search cancel"
+            class="search__cancel"
+            data-id="Cancel"
+        )!= "Cancel"
+
+
+        include letter
+
+
+    include ./_macros/_search/search-content
+
+
+    include ./_macros/_search/search-view

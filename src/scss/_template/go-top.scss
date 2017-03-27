@@ -1,0 +1,64 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN
+///
+.go-top {
+	display: block;
+	border: 1px solid $c-black;
+	@include mixinDimensions(
+		(170px - (1 * 2)),
+		140px
+	);
+	text-align: center;
+	@include respond-to(large-max) {
+		height: 37px;
+		margin-bottom: 20px;
+	}
+	@include respond-to(large) {
+		width: (940px - 2);
+	}
+	@include respond-to(medium-max) {
+		width: $w-all;
+		margin-bottom: 6px;
+		border: {
+			left: 0;
+			right: 0;
+		};
+	}
+
+
+	&__icon {
+		display: inline-block;  *display: inline;  *zoom: 1;
+		margin-top: 35px;
+		@include retina-sprite($sp-i-go-top-group);
+		@include respond-to(large-max) {
+			display: none;
+		}
+
+
+		&-hide {
+			display: none;
+			@include respond-to(large-max) {
+				display: inline-block;  *display: inline;  *zoom: 1;
+				vertical-align: middle;
+				margin-left: 10px;
+				@include retina-sprite($sp-i-gp-top-medium-group);
+			}
+		}
+	}
+
+
+	&__text {
+		font-size: 14px;
+		@include respond-to(large-max) {
+			display: inline-block;  *display: inline;  *zoom: 1;
+			vertical-align: middle;
+			line-height: 37px;
+		}
+	}
+}

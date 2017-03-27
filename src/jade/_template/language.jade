@@ -1,0 +1,29 @@
+-
+    var languageArr = [
+        "English",
+        "Deutsch",
+        "Français",
+        "Italiano",
+        "Español",
+        "Portuguesa",
+        "日本語"
+    ];
+
+
+.language
+    a(
+        href="javascript:void(0);"
+        title="Language"
+        class="language__btn"
+    )
+        i.language__icon.language__icon_left
+        span.language__text!= "English"
+        i.language__icon.language__icon_right
+
+    .language__drop.drop__down
+        -for(var i = 0; i < languageArr.length; i++)
+            a(
+                href="javascript:void(0);"
+                title="Language"
+                class="language__btn-drop drop__down-btn"
+            )!= languageArr[i]

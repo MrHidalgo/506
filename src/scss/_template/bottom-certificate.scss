@@ -1,0 +1,54 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN
+///
+.bottom-certificate {
+	padding: {
+		top: 30px;
+		bottom: 30px;
+	};
+	@include respond-to(small-max) {
+		width: $w-all;
+		padding: {
+			left: 15px;
+			right: 15px;
+		};
+	}
+
+
+	.container {
+		padding-left: 0;
+	}
+
+
+	&__img {
+		display: inline-block;  *display: inline;  *zoom: 1;
+		vertical-align: top;
+		margin-right: 10px;
+		@include respond-to(small-max) {
+			margin-right: 0;
+		}
+
+
+		&-wrap {
+			display: inline-block;  *display: inline;  *zoom: 1;
+
+
+			@include respond-to(small-max) {
+				display: inline-block;
+				vertical-align: top;
+				margin-right: -5px;
+				width: ($w-all / 3);
+				padding: {
+					left: 5px;
+					right: 5px;
+				};
+			}
+		}
+	}
+}

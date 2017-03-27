@@ -1,0 +1,57 @@
+
+.modal
+    .modal__container.modal__coupon
+
+        .modal__header.clearfix
+            p(
+                class="modal__title"
+                data-id="Apply Coupon"
+                )!= "Apply Coupon"
+
+            a(
+                href="javascript:void(0);"
+                title="Close modal"
+                class="modal__close"
+            )
+                i.modal__close-icon
+
+        .modal__main
+            .modal__enter
+                p(
+                    class="modal__sub-title"
+                    data-id="Enter Your Coupon</br>Code If You Have One:"
+                )!= "Enter Your Coupon</br>Code If You Have One:"
+
+                .modal__filed
+                    input(
+                        type="text"
+                        class="modal__input"
+                        name="modal__input"
+                        placeholder="Enter code here [ex: 111]"
+                    )
+
+                +btn("btn__modal btn-modal-submit-js", "SUBMIT")
+
+            .modal__error
+                p(
+                    class="modal__sub-title"
+                    data-id="Maybe you entered wrong code of coupon or this coupon has already been used."
+                )!= "Maybe you entered wrong code of coupon or this coupon has already been used."
+
+                +btn("btn__modal btn-modal-error-js", "TRY AGAIN")
+
+                i.modal__error-icon
+
+            .modal__done
+                p(
+                    class="modal__done-title modal__done-title_0"
+                    data-id="Thank you!"
+                )!= "Thank you!"
+                p(
+                    class="modal__done-title modal__done-title_1"
+                    data-id="You discount now 5%"
+                )!= "You discount now 5%"
+
+                +btn("btn__modal btn-modal-done-js", "CONTINUE SHOPPING")
+
+                i.modal__done-icon

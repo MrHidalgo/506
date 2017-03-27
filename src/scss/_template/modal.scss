@@ -1,0 +1,241 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// VARIABLE
+///
+$modalCoupon-width  : 470px;
+$modalCoupon-height : 309px;
+///
+/// MAIN
+///
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 150;
+	top: 0;
+	left: 0;
+	@include mixinDimensions(100%);
+	background-color: rgba(0,0,0,.5);
+	@include respond-to(small-max) {
+		display: block;
+		position: absolute;
+		left: -100%;
+		top: 55px;
+		width: calc(100% - 55px);
+		background-color: $c-white;
+		transition: left .4s ease-in-out;
+
+
+		.open-popup & {
+			left: 0;
+			transition: left .4s ease-in-out;
+		}
+	}
+
+
+	&__container {
+		position: absolute;
+
+		z-index: 151;
+		top: 50%;
+		left: 50%;
+
+		overflow: hidden;
+		@include respond-to(small-max){
+			top: 0;
+			left: 0;
+		}
+	}
+
+
+	&__coupon {
+		width: $modalCoupon-width;
+		height: $modalCoupon-height;
+		margin: {
+			left: -($modalCoupon-width / 2);
+			top: -($modalCoupon-height / 2);
+		};
+		background-color: $c-white;
+		@include respond-to(small-max){
+			@include mixinDimensions($w-all, auto);
+			margin: {
+				left: 0;
+				top: 0;
+			};
+		}
+	}
+
+
+	&__header {
+		position: relative;
+		z-index: 10;
+		height: 55px;
+		background-color: $c-black;
+	}
+
+
+	&__main {
+		position: relative;
+		left: 50%;
+		margin: {
+			top: 50px;
+			left: -(280px / 2);
+		};
+		width: 280px;
+		@include respond-to(small-max){
+			left: 0;
+			width: $w-all;
+			margin: {
+				top: 0;
+				left: 0;
+			};
+			padding: {
+				top: 15px;
+				left: 15px;
+				right: 15px;
+			};
+		}
+	}
+
+
+	&__error {
+		display: none;
+
+
+		.modal__sub-title {
+			padding-bottom: 45px;
+		}
+
+
+		&-icon {
+			position: absolute;
+			top: -30px;
+			right: -55px;
+			@include retina-sprite($sp-i-coupon-error-group);
+			@include respond-to(small-max) {
+				top: 15px;
+				right: 30px;
+			}
+		}
+	}
+
+
+	&__done {
+		display: none;
+		text-align: center;
+		@include respond-to(small-max) {
+			text-align: left;
+		}
+
+
+		&-title {
+			font: {
+				size: 20px;
+				family: $f-RW-heavy;
+			};
+			@include respond-to(small-max) {
+				font-size: 18px;
+			}
+
+
+			&_0 {
+				color: $c-black;
+			}
+			&_1 {
+				color: $c-robins-egg-blue;
+				padding-bottom: 55px;
+			}
+		}
+
+
+		&-icon {
+			position: absolute;
+			z-index: 0;
+			top: -50px;
+			left: 0;
+			right: 0;
+			margin: {
+				left: auto;
+				right: auto;
+			};
+			@include retina-sprite($sp-i-coupon-done-group);
+		}
+	}
+
+
+	&__title {
+		font: {
+			size: 18px;
+			family: $f-RW-heavy;
+		};
+		color: $c-white;
+		line-height: 55px;
+		padding-left: 25px;
+		@include respond-to(small-max) {
+			cursor: pointer;
+			padding-left: 15px;
+
+
+			&:before {
+				content: "";
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 5px;
+				position: relative;
+				top: -1px;
+				@include retina-sprite($sp-i-modal-title-arr-group);
+			}
+		}
+	}
+
+
+	&__sub-title {
+		font: {
+			family: $f-RW-medium;
+		};
+		letter-spacing: -0.24px;
+		padding-bottom: 10px;
+	}
+
+
+	&__close {
+		position: absolute;
+		right: 0;
+		top: 0;
+		@include mixinDimensions(55px);
+		background-color: $c-white-smoke;
+		@include respond-to(small-max){
+			display: none;
+		}
+
+
+		&-icon {
+			position: absolute;
+			top: 18px;
+			left: 18px;
+			@include retina-sprite($sp-i-modal-close-group);
+		}
+	}
+
+
+	&__input {
+		padding: 0 15px;
+		margin-bottom: 15px;
+		width: (280px - (15 * 2) - (1 * 2));
+		height: (42px - (1 * 2));
+		font: {
+			size: 14px;
+		};
+		color: $c-black;
+		border: 1px solid $c-gainsboro;
+		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.06);
+		@include respond-to(small-max) {
+			width: $w-all;
+			height: 42px;
+		}
+	}
+}

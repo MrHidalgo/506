@@ -1,0 +1,11 @@
+
+.search__content
+
+    p(
+        class="search__content_empty"
+        data-id="Please, start typing to search."
+    )!= "Please, start typing to search."
+
+    .search__content_full
+        .product.product_list
+            +productBox(10, false, true)

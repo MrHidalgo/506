@@ -1,0 +1,99 @@
+include _mixin/mixin
+include _mixin/macrosMixin
+
+doctype html
+// if JavaScript disable in page add class "no-js"
+html(
+    lang="en"
+    class="js"
+)
+
+
+    +headSite("506 CATEGORIES", linkSite.styleLinkIndex, "")
+
+    // open-menu open-popup cart_fill
+    body(class="cart_fill")
+
+        include _template/menu
+        include _template/header
+        include _template/category
+
+        .body__row.body__row-category
+            .container
+
+                include _template/breadcrumbs
+
+                .main__title-wrap.main__title-wrap--hide.clearfix
+                    +mainTitle("main__title_left", "Erectile Dysfunction")
+
+                    include ./_template/category-view
+
+
+                // class for modify product position: [product_grid, product_list, product_gallery]
+                .product.product_grid.clearfix
+                    +productBox(30, false, true)
+
+
+                a(
+                    href="javascript:void(0);"
+                    title="View all products"
+                    class="btn__view-all"
+                )
+                    span.btn__view-all-icon--wrap
+                        i.btn__view-all-icon
+                    p(
+                        class="btn__view-all-text"
+                        data-id="SHOW MORE PRODUCTS"
+                    )!= "SHOW MORE PRODUCTS"
+
+
+                .bottom-info.clearfix
+                    .bottom-info_right
+                        include ./_template/go-top
+                    .bottom-info_centered
+                        include ./_template/coupon
+                    .bottom-info_left
+                        include ./_template/certificate
+
+
+        include ./_template/footer
+
+        include ./_template/bottom-certificate
+
+        include _template/modal__coupon
+        include _template/slide-letter
+
+        div(class="lang__btn", style="text-align:center; padding-top:50px; padding-bottom:15px; position:relative; z-index;100;")
+            a(
+            href="javascript:void(0);"
+            data-lang="en"
+            )!= "|| -- EN -- ||"
+            a(
+            href="javascript:void(0);"
+            data-lang="de"
+            )!= "-- DE -- ||"
+            a(
+            href="javascript:void(0);"
+            data-lang="fr"
+            )!= "-- FR -- ||"
+            a(
+            href="javascript:void(0);"
+            data-lang="it"
+            )!= "-- IT -- ||"
+            a(
+            href="javascript:void(0);"
+            data-lang="pt"
+            )!= "-- PT -- ||"
+            a(
+            href="javascript:void(0);"
+            data-lang="es"
+            )!= "-- ES -- ||"
+            a(
+            href="javascript:void(0);"
+            data-lang="jp"
+            )!= "-- JP -- ||"
+
+
+
+    - for(var i = 0; i < linkSite.scriptLink.length; i++)
+        script(src= linkSite.scriptLink[i])

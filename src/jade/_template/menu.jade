@@ -1,0 +1,72 @@
+-
+    var menuName = [
+        "Apply Coupon",
+        "About Us",
+        "F.A.Q.",
+        "Our Policies",
+        "Track My Order",
+        "Shopping Cart",
+        "Contact Us"
+    ];
+    var langArr = [
+        "English",
+        "Deutsch",
+        "Français",
+        "Italiano",
+        "Español",
+        "Portuguesa",
+        "日本語"
+    ];
+    var currencyArr = [
+        "$ USD",
+        "€ EUR",
+        "CA$ CAD",
+        "£ GBP",
+        "CHF CHF",
+        "A$ AUD",
+        "円 JPY",
+        "R$ BRL",
+        "$ MXN",
+        "$ NZD"
+    ];
+
+
+.menu
+    .menu__container
+
+        .menu__burger
+            +btnMenuBurger("btn__burger")
+
+        .container.clearfix
+
+            .menu__search.search__row
+                include ./_macros/_search/search-wrap
+
+            .menu__row
+
+                -for(var i = 0; i < menuName.length; i++)
+                    a(
+                        href="javascript:void(0);"
+                        title= menuName[i]
+                        class= (i === 0) ? "menu__btn menu__btn-coupon btn-coupon-js" : "menu__btn btn-menu-js"
+                    )
+                        span(data-id= menuName[i])!= menuName[i]
+                        if(i === 0)
+                            span(
+                                class="menu__btn-coupon_info"
+                                data-id="5% OFF"
+                            )!= "5% OFF"
+                        if(i === 5)
+                            // after add product in cart show this block
+                            span.menu__btn-cart!= "2"
+                        i.menu__btn-icon
+
+
+            .menu__select
+                +selectWrap(langArr)
+                +selectWrap(currencyArr)
+
+
+            .menu__toolfree
+                include tollfree
+

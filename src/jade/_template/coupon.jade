@@ -1,0 +1,21 @@
+
+.coupon
+
+    p(
+        class="coupon__title"
+        data-id="5% coupon code to your email:"
+    )!= "5% coupon code to your email:"
+
+    .coupon__filed
+        input(
+            type="text"
+            name="coupon"
+            placeholder="Email"
+            class="coupon__input"
+            id="coupon__input"
+        )
+        label(
+            for="coupon__input"
+            class='coupon__label'
+        )
+            i.coupon__label-icon

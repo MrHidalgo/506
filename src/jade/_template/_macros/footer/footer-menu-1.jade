@@ -1,0 +1,26 @@
+-
+    var footerMenuArr1 = [
+        "F.A.Q.",
+        "Contact Us",
+        "Report Spam",
+        "Unsubscribe"
+    ];
+
+.footer-menu
+    p(
+        class="footer-menu__title"
+    )
+        span(
+            class="footer-menu__title-text"
+            data-id="Help Me"
+        )!= "Help Me"
+        i.footer-menu__title-icon
+
+    .footer-menu__row
+        -for(var i = 0; i < footerMenuArr1.length; i++)
+            a(
+                href="javascript:void(0);"
+                title=footerMenuArr1[i]
+                class="footer-menu__btn"
+                data-id=footerMenuArr1[i]
+            )!= footerMenuArr1[i]

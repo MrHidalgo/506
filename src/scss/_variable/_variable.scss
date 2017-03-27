@@ -1,0 +1,80 @@
+@import "../_function/function";
+
+////
+/// @group  Variable
+////
+
+///
+/// @name   object
+///
+
+// Proxima Nova --> PN
+
+$object : (
+	color : (
+		white             : #FFF,
+		black             : #000,
+		nero              : #191919,
+		grey-suit         : #8E8E93,
+		white-smoke       : #F2F2F2, // F4F4F4
+		radical-red       : #FF2D55,
+		radical-red-hover : #FF4367,
+		radical-red-active: #E5284C,
+		lemon             : #FFF319,
+		navy-blue         : #0070C9,
+		robins-egg-blue   : #00CAB3,
+		golden-poppy      : #F6C500,
+		mandy             : #E04F5F,
+		gainsboro         : #D9D9D9,
+		whisper           : #E7E7E7, // ECECEC
+		forget-me-not     : #FFF1DE,
+		azure             : #F8FCFC,
+		azure-darken      : #E9F7F8,
+		twilight-blue     : #F7F8E9,
+		summer-sky        : #29ABE2,
+	),
+
+	fonts : (
+		R-bold            : "roboto-bold",
+		R-regular         : "roboto-regular",
+		R-medium          : "roboto-medium",
+		RW-bold           : "raleway-bold",
+		RW-heavy          : "raleway-heavy",
+		RW-medium         : "raleway-medium",
+		RW-regular        : "raleway-regular",
+	),
+
+	dimension : (
+		all       : 100%
+	),
+);
+
+$w-all                : return-value(dimension, all);
+
+$c-white              : return-value(color, white);
+$c-black              : return-value(color, black);
+$c-nero               : return-value(color, nero);
+$c-grey-suit          : return-value(color, grey-suit);
+$c-white-smoke        : return-value(color, white-smoke);
+$c-radical-red        : return-value(color, radical-red);
+$c-radical-red-hover  : return-value(color, radical-red-hover);
+$c-radical-red-active : return-value(color, radical-red-active);
+$c-lemon              : return-value(color, lemon);
+$c-navy-blue          : return-value(color, navy-blue);
+$c-robins-egg-blue    : return-value(color, robins-egg-blue);
+$c-mandy              : return-value(color, mandy);
+$c-gainsboro          : return-value(color, gainsboro);
+$c-whisper            : return-value(color, whisper);
+$c-forget-me-not      : return-value(color, forget-me-not);
+$c-azure              : return-value(color, azure);
+$c-azure-darken       : return-value(color, azure-darken);
+$c-twilight-blue      : return-value(color, twilight-blue);
+$c-summer-sky         : return-value(color, summer-sky);
+
+$f-R-bold             : return-value(fonts, R-bold);
+$f-R-regular          : return-value(fonts, R-regular);
+$f-R-medium           : return-value(fonts, R-medium);
+$f-RW-bold            : return-value(fonts, RW-bold);
+$f-RW-heavy           : return-value(fonts, RW-heavy);
+$f-RW-medium          : return-value(fonts, RW-medium);
+$f-RW-regular         : return-value(fonts, RW-regular);

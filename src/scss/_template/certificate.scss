@@ -1,0 +1,123 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN
+///
+.certificate {
+	text-align: left;
+
+
+	&__title {
+		display: none;
+		@include respond-to(small-max) {
+			display: block;
+			border-top: 1px solid $c-whisper;
+		}
+	}
+
+
+	&__row {
+		@include respond-to(small-max) {
+			padding: {
+				left: 15px;
+				right: 15px;
+			};
+		}
+	}
+
+
+	&__block {
+		margin-top: 2px;
+		width: 470px;
+		height: 70px;
+		background-color: $c-white-smoke;
+		@include respond-to(large-max) {
+			margin-top: 6px;
+		}
+		@include respond-to(medium-max) {
+			margin-top: 6px;
+			width: $w-all;
+		}
+		@include respond-to(small-max) {
+			height: auto;
+			min-height: 70px;
+
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+
+		&_first {
+			position: relative;
+		}
+	}
+
+
+	&__img {
+		display: inline-block;  *display: inline;  *zoom: 1;
+		vertical-align: middle;
+		margin-right: -5px;
+
+
+		&-wrap {
+			display: inline-block;  *display: inline;  *zoom: 1;
+			vertical-align: middle;
+			width: $w-all;
+			@include respond-to(small-max) {
+				padding-top: 13px;
+			}
+		}
+
+
+		&-box {
+			display: inline-block;  *display: inline;  *zoom: 1;
+			margin-right: -5px;
+			width: ($w-all / 4);
+			height: $w-all;
+			text-align: center;
+
+
+			.certificate__block_first & {
+				@include respond-to(small-max) {
+					position: absolute;
+					left: 0;
+					top: 0;
+					@include mixinDimensions(100px, $w-all);
+				}
+			}
+		}
+	}
+
+
+	&__text {
+		display: inline-block;  *display: inline;  *zoom: 1;
+		vertical-align: middle;
+		font-size: 11px;
+		color: $c-grey-suit;
+		padding: {
+			right: 50px;
+			left: 25px;
+		}
+		width: (470px - (470px / 4) - 75px);
+		@include respond-to(small-max) {
+			padding: {
+				top: 13px;
+				bottom: 13px;
+				left: 100px;
+				right: 15px;
+			}
+			width: $w-all;
+		}
+	}
+}

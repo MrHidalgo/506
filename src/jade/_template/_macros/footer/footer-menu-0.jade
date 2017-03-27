@@ -1,0 +1,28 @@
+-
+    var footerMenuArr0 = [
+        "Home",
+        "Who are we?",
+        "Our Policies",
+        "Track My Order",
+        "Shopping Cart"
+    ];
+
+
+.footer-menu
+    p(
+        class="footer-menu__title"
+    )
+        span(
+            class="footer-menu__title-text"
+            data-id="Shop"
+        )!= "Shop"
+        i.footer-menu__title-icon
+
+    .footer-menu__row
+        -for(var i = 0; i < footerMenuArr0.length; i++)
+            a(
+                href="javascript:void(0);"
+                title=footerMenuArr0[i]
+                class="footer-menu__btn"
+                data-id=footerMenuArr0[i]
+            )!= footerMenuArr0[i]

@@ -1,0 +1,36 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+
+@import "./_main/_macros/btn-burger";
+@import "./logotype";
+@import "./tollfree";
+@import "./search";
+@import "./letter";
+@import "./cart";
+
+///
+/// MAIN
+///
+.header {
+	height: (75px - 1);
+	border-top: 1px solid $c-whisper;
+	@include respond-to(small-max) {
+		height: 55px;
+	}
+
+
+	.container {
+		@include respond-to(medium-max) {
+			min-width: 0;
+			max-width: 100%;
+			padding: {
+				left: 0;
+				right: 0;
+			};
+		}
+	}
+}

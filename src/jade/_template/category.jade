@@ -1,0 +1,50 @@
+-
+    var categoryArr = [
+        "Ed Packs",
+        "Erectile Dysfunction",
+        "Antiviral",
+        "Anti-acidity",
+        "Anti-allergy/asthma",
+        "Anti-depressant",
+        "Skin Care"
+    ];
+
+
+.category
+    .container
+        .category__wrap.right
+            a(
+                href="javascript:void(0);"
+                title="Shop by Category"
+                class="category__btn category__btn-main btn-category-js"
+            )
+                span(
+                    class="category__btn-main-text"
+                    data-id="Shop by Category"
+                )!= "Shop by Category"
+                span(
+                    class="category__btn-main-text category__btn-main-text_mobile"
+                    data-id="CATEGORIES"
+                )!= "CATEGORIES"
+                i.category__btn-main-icon
+
+            .category__row
+                -for(var i = 0; i < categoryArr.length; i++)
+                    a(
+                        href="javascript:void(0);"
+                        title= categoryArr[i]
+                        class= (i !== categoryArr.length - 1) ? "category__btn" : "category__btn category__btn_hide"
+                    )!= categoryArr[i]
+
+        .category__drop.clearfix
+            -for(var j = 0, k = 0; j < 25; j++, k++)
+                if(k > 6)
+                    - k = 0
+                a(
+                    href="javascript:void(0);"
+                    title=categoryArr[k]
+                    class="category__drop-btn"
+                )
+                    i.category__drop-btn--icon
+                    != categoryArr[k]
+                    i.category__drop-btn--icon_mobile

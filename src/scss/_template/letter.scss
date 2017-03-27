@@ -1,0 +1,245 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// VAR
+///
+$letterTitleWidth : 200px;
+
+///
+/// MAIN
+///
+.letter {
+	display: none;
+	position: relative;
+	height: (47px - (1 * 2));
+	border-top: 1px solid $c-white-smoke;
+	border-bottom: 1px solid $c-white-smoke;
+	@include respond-to(medium-max) {
+		cursor: pointer;
+		height: auto;
+		min-height: 47px;
+	}
+
+
+	.search__active & {
+		display: block;
+	}
+
+
+	&__wrap {
+		&.clearfix {
+			height: 45px;
+		}
+	}
+
+
+	&__row {
+		@include respond-to(medium-max) {
+			display: none;
+		}
+
+
+		.letter__open & {
+			@include respond-to(medium-max) {
+				display: block;
+				border-top: 1px solid $c-white-smoke;
+				min-height: 160px;
+			}
+		}
+
+
+		.slide__letter_active & {
+			@include respond-to(small-max) {
+				display: block;
+			}
+		}
+	}
+
+
+	&__container {
+		@include respond-to(medium) {
+			width: 650px;
+			margin: {
+				top: 12px;
+				left: auto;
+				right: auto;
+			};
+		}
+
+
+		.slide__letter_active & {
+			@include respond-to(small-max) {
+				text-align: center;
+			}
+		}
+	}
+
+
+	&__title {
+		float: left;
+		width: $letterTitleWidth;
+		line-height: 45px;
+		font-size: 14px;
+		letter-spacing: 0.15px;
+		@include respond-to(medium-max) {
+			padding-left: 15px;
+			width: $w-all;
+		}
+
+
+		&-text {
+			@include respond-to(medium-max) {
+				display: none;
+			}
+
+
+			&_hide {
+				display: none;
+				@include respond-to(medium-max) {
+					display: inline-block;
+					color: $c-radical-red;
+					font-size: 12px;
+				}
+			}
+		}
+
+
+		&-icon {
+			display: inline-block;  *display: inline;  *zoom: 1;
+			vertical-align: middle;
+			position: relative;
+			top: -2px;
+			margin-right: 10px;
+			@include retina-sprite($sp-i-letter-group);
+		}
+	}
+
+
+	&__btn {
+		display: none;
+		@include respond-to(medium-max) {
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			@include mixinDimensions(65px, 45px);
+			text-align: center;
+		}
+
+		&-icon {
+			display: inline-block;
+			margin-top: 17px;
+			@include retina-sprite($sp-i-letter-open-group);
+			@include respond-to(small-max) {
+				@include retina-sprite($sp-i-letter-slide-right-group);
+			}
+
+
+			.letter__open & {
+				margin-top: 18px;
+				@include retina-sprite($sp-i-letter-close-group);
+			}
+		}
+	}
+
+
+	&__let {
+		float: left;
+		width: (940px - ($letterTitleWidth)) / 26;
+		height: 45px;
+		line-height: 45px;
+		text-align: center;
+		color: $c-navy-blue;
+		font-size: 14px;
+		@include respond-to(medium-max) {
+			@include mixinDimensions(50px, 68px);
+			color: $c-black;
+			text-align: center;
+
+
+			&-field {
+				display: inline-block;
+				vertical-align: top;
+				margin-top: 10px;
+				@include mixinDimensions(40px, 48px);
+				border-radius: 10px;
+				border: 1px solid $c-whisper;
+				background-color: $c-white-smoke;
+				box-shadow: 0 6px 12px 0 rgba(0,0,0,0);
+				transition-property: margin-top, box-shadow, height;
+				transition: .2s ease-in-out;
+			}
+
+
+			&:hover {
+				.letter__let-field {
+					margin-top: 5px;
+					height: 58px;
+					line-height: 58px;
+					box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2);
+					transition-property: margin-top, box-shadow, height;
+					transition: .2s ease-in-out;
+				}
+			}
+		}
+		.slide__letter_active & {
+			@include respond-to(small-max) {
+				float: none;
+				display: inline-block;
+			}
+		}
+	}
+}
+.slide__letter {
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	left: -100%;
+	@include mixinDimensions($w-all);
+	min-height: $w-all;
+	background-color: $c-white;
+	transition-property: left;
+	transition: .3s ease-in-out;
+
+
+	&_active {
+		left: 0;
+		transition-property: left;
+		transition: .3s ease-in-out;
+	}
+
+
+	&-header {
+		height: 55px;
+		line-height: 55px;
+		margin-bottom: 10px;
+		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.06);
+		background-color: $c-white;
+	}
+
+
+	&-back {
+		float: left;
+		padding-left: 15px;
+
+
+		&-icon {
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 5px;
+			@include retina-sprite($sp-i-slide-letter-group);
+		}
+
+
+		&-text {
+			font: {
+				family: $f-R-medium;
+			};
+			color: $c-radical-red;
+		}
+	}
+}

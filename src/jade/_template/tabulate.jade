@@ -1,0 +1,27 @@
+-
+    var tabulateArr = [
+        "Erectile Dysfunction",
+        "ED Packs",
+        "Men's Health",
+        "Erectile Dysfunction",
+        "ED Packs",
+        "Men's Health",
+        "Erectile Dysfunction",
+        "ED Packs"
+    ];
+
+
+.tabulate.clearfix
+    -for(var i = 0, j = 1; i < tabulateArr.length; i++, j++)
+        a(
+            href="javascript:void(0);"
+            title=tabulateArr[i]
+            class=
+                (j > 0 && j % 4 === 0)
+                ? "tabulate__btn tabulate__btn_big"
+                    : (j > 0 && j % 3 === 0)
+                ? "tabulate__btn tabulate__btn_large"
+                    : "tabulate__btn"
+        )
+            != tabulateArr[i]
+            i.tabulate__btn-icon

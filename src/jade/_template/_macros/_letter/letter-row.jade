@@ -1,0 +1,18 @@
+-
+    var letterArr = [
+        "A", "B", "C", "D", "E", "F", "G", "H",
+        "I", "J", "K", "L", "M", "N", "O", "P",
+        "Q", "R", "S", "T", "U", "V", "W", "X",
+        "Y", "Z"
+    ];
+
+
+.letter__row
+    .letter__container.clearfix
+        -for(var i = 0; i < letterArr.length; i++)
+            a(
+                href="javascript:void(0);"
+                title= letterArr[i]
+                class="letter__let"
+            )
+                span.letter__let-field!= letterArr[i]

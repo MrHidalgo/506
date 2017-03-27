@@ -1,0 +1,101 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN
+///
+.categories {
+	display: none;
+	padding: {
+		left: 15px;
+		right: 15px;
+	};
+
+
+	&__box {
+		border-top: 1px solid $c-whisper;
+
+
+		&:first-child {
+			border-top: none;
+
+
+			.categories__drop {
+				margin-right: -15px;
+				padding: 0;
+			}
+		}
+
+
+		&.active {
+			.categories__title-icon {
+				top: 18px;
+				right: 1px;
+				@include retina-sprite($sp-i-letter-close-group);
+			}
+			.categories__drop {
+				display: block;
+			}
+		}
+	}
+
+
+	&__title {
+		cursor: pointer;
+		display: block;
+		position: relative;
+		height: 45px;
+		line-height: 45px;
+		font: {
+			size: 16px;
+			family: $f-RW-medium;
+		};
+		color: $c-radical-red;
+
+
+		&-icon {
+			position: absolute;
+			right: 0;
+			top: 17px;
+			@include retina-sprite($sp-i-letter-open-group);
+		}
+	}
+
+
+	&__row {
+		height: 35px;
+		line-height: 35px;
+
+
+		&-name {
+			float: left;
+			font: {
+				size: 14px;
+			};
+		}
+
+		&-price {
+			float: right;
+			color: $c-radical-red;
+			font-size: 14px;
+
+
+			&--text {
+				font-size: 12px;
+				color: $c-grey-suit;
+			}
+		}
+	}
+
+
+	&__drop {
+		display: none;
+		border: {
+			top: 1px solid $c-whisper;
+		}
+		padding: 15px;
+	}
+}

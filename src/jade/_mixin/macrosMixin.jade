@@ -1,0 +1,99 @@
+//- BTN
+mixin btn(className, text)
+    a(
+        href="javascript:void(0);"
+        title=""
+        data-id= text
+        class="btn " + className
+    )!= text
+
+
+//- MAIN TITLE
+mixin mainTitle(className, text, attr)
+    p(
+        class="main__title " + className
+        data-id=text
+        data-js=attr
+    )!= text
+
+
+//- BTN VIEW ALL
+mixin btnViewAll(className)
+    a(
+        href="javascript:void(0);"
+        title=""
+        class="btn__view " + className
+    )
+        span(
+            class="btn__view-text"
+            data-id="View All"
+        )!= "View All"
+        i.btn__view-icon
+
+//- PRODUCT
+mixin productBox(productNum, packBool, btnBool)
+    -for(var i = 0; i < productNum; i++)
+        div(
+            class= (i === productNum - 1) ? "product__box product__box_hide" : "product__box"
+        )
+            .product__img-wrap
+                img(
+                    src="./image/img-product.png"
+                    title="Product image"
+                    alt="Product image"
+                    class="product__img"
+                )
+
+            .product__info-wrap
+                p(
+                    class="product__title"
+                    title= (i % 2 == 0) ? "Viagra" : "Maximum Potency Testosterone Booster"
+                )!= (i % 2 == 0) ? "Viagra" : "Maximum Potency Testosterone Booster"
+                p(
+                    class="product__desc"
+                    data-id="Viagra is one of the best-known treatments for erectile dysfunction (ED). ED is caused by insufficient blood flow to the penis, resulting in the inability to maintain an erection. Viagra can dramatically enhance the quality of an erection by increasing blood flow to the penis. Its effect lasts for 4-6 hours. Viagra is widely known to treat PAH (pulmonary arterial hypertension)."
+                )!= "Viagra is one of the best-known treatments for erectile dysfunction (ED). ED is caused by insufficient blood flow to the penis, resulting in the inability to maintain an erection. Viagra can dramatically enhance the quality of an erection by increasing blood flow to the penis. Its effect lasts for 4-6 hours. Viagra is widely known to treat PAH (pulmonary arterial hypertension)."
+
+                p.product__price
+                    span.product__price-num!= (packBool === false) ? "$2.80" : "$182.40"
+                    if(packBool === false)
+                        span(
+                            class="product__price-text"
+                            data-id="per pill"
+                        )!= "per pill"
+                    else
+                        span(
+                            class="product__price-text"
+                            data-id="per 240 pill"
+                        )!= "per 240 pill"
+
+                p(
+                    class="product__discount product__discount_hide"
+                    data-id="75% OFF"
+                )!= "75% OFF"
+
+                if(packBool === false)
+                    p(
+                        class="product__sub-title"
+                        data-id="Market prices:"
+                    )!= "Market prices:"
+
+                    p.product__total-price!= "$57.33 - $167.98"
+
+                p(
+                    class="product__discount"
+                    data-id="75% OFF"
+                )!= "75% OFF"
+
+                if(btnBool === true)
+                    +btn("btn_border product__btn", "SELECT PACK")
+
+//- SELECT
+mixin selectWrap(dataArr)
+    .input__select
+        span.input__select-value
+        select()
+            -for (var i = 0; i < dataArr.length; i++)
+                option!= dataArr[i]
+        span.input__select-icon--wrap
+            i.input__select-icon

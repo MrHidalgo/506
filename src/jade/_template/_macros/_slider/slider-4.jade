@@ -1,0 +1,34 @@
+include ../../../_mixin/macrosMixin
+
+
+.slider__row.slider__row-4.clearfix
+    img(
+        src="./image/img-slider-4-pills.png"
+        title=""
+        alt=""
+        class="slider__img slider__img-pills"
+    )
+
+    .slider__wrap
+
+        p.slider__title!= "Cialis Professional"
+
+        span.slider__sub-title!= "Day of Deals"
+        span.slider__discount!= "75% OFF"
+
+        .slider__clearfix
+
+        .slider__price.slider__price-old
+            i.slider__price-bg-left
+            span.slider__price-text!= "$240.10"
+            i.slider__price-bg
+            i.slider__price-bg-right
+            i.slider__price-line
+
+        .slider__price.slider__price-new
+            i.slider__price-bg-left
+            span.slider__price-text!= "$130<sup>.80</sup>"
+            i.slider__price-bg
+            i.slider__price-bg-right
+
+        +btn("btn btn_small btn_border slider__btn", "SELECT PACK")

@@ -1,0 +1,123 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN
+///
+.cart {
+	float: right;
+	margin-top: 16px;
+	cursor: pointer;
+	position: relative;
+	background-color: $c-white;
+	@include mixinDimensions(50px, 42px);
+	border-radius: 2em;
+	box-shadow: 0 0 8px 0 rgba(0,0,0,0.2);
+	transition: background-color, width .2s ease-in-out;
+	@include respond-to(medium-max) {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	@include respond-to(medium) {
+		position: absolute;
+		right: 0;
+	}
+	@include respond-to(small-max) {
+		margin-top: 6px;
+	}
+
+
+	.cart_fill & {
+		width: 90px;
+		transition: width .2s ease-in-out;
+	}
+
+
+	&:hover {
+		background-color: $c-radical-red;
+		transition: background-color, border .2s ease-in-out;
+
+
+		.cart__icon {
+			top: 15px;
+			@include retina-sprite($sp-i-cart-arrow-group);
+			animation: slideInLeft .1s linear;
+		}
+		.cart__wrap {
+			border-color: $c-white;
+		}
+	}
+
+
+	&__icon {
+		position: absolute;
+		left: 17px;
+		top: 13px;
+		@include retina-sprite($sp-i-cart-group);
+	}
+
+
+	&__wrap {
+		opacity: 0;
+		border: 2px solid $c-radical-red;
+		background-color: $c-radical-red;
+
+
+		.cart_fill & {
+			opacity: 1;
+			position: absolute;
+			right: 4px;
+			top: 4px;
+			@include mixinDimensions(30px);
+			text-align: center;
+			border-radius: $w-all;
+			transition: border .2s ease-in-out;
+			@include respond-to(medium-max) {
+				right: 0;
+				@include mixinDimensions(34px);
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+			@include respond-to(small-max) {
+				top: 4px;
+			}
+
+
+			&-num {
+				display: inline-block;  *display: inline;  *zoom: 1;
+				vertical-align: middle;
+				font: {
+					family: $f-RW-medium;
+				};
+				color: $c-white;
+				@include respond-to(small-max) {
+					line-height: 1;
+					//position: relative;
+					//top: -2px;
+				}
+			}
+		}
+	}
+}
+@-webkit-keyframes slideInLeft {
+	from {
+		transform: translate3d(-100%, 0, 0);
+		visibility: visible;
+	}
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes slideInLeft {
+	from {
+		transform: translate3d(-100%, 0, 0);
+		visibility: visible;
+	}
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}

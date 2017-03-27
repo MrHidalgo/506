@@ -1,0 +1,26 @@
+
+.letter
+    .letter__wrap
+        a(
+            href="javascript:void(0);"
+            title="Search by letter:"
+            class="letter__title btn-letter-js"
+        )
+            i.letter__title-icon
+            span(
+                class="letter__title-text"
+                data-id="Search by letter:"
+            ) Search by letter:
+            span(
+                class="letter__title-text letter__title-text_hide"
+                data-id="Letter search:"
+            ) Letter search:
+
+        a(
+            href="javascript:void(0);"
+            title="Open letter search"
+            class="letter__btn"
+        )
+            i.letter__btn-icon
+
+    include _macros/_letter/letter-row

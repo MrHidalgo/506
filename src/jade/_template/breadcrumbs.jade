@@ -1,0 +1,20 @@
+-
+    var breadArr = [
+        "Home",
+        "Categories",
+        "Erectile Dysfunction",
+        "Cialis Super Active (Tadalafil)"
+    ];
+
+
+.breadcrumbs
+    -for(var i = 0; i < breadArr.length; i++)
+        a(
+            href="javascript:void(0);"
+            title=""
+            class= (i < breadArr.length - 1) ? "breadcrumbs__btn" : "breadcrumbs__btn breadcrumbs__btn_current"
+        )
+            span.breadcrumbs__btn-text!= breadArr[i]
+
+            if(i != breadArr.length - 1)
+                i.breadcrumbs__btn-icon

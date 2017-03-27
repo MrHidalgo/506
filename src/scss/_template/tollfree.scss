@@ -1,0 +1,74 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN
+///
+.tollfree {
+	float: left;
+	position: relative;
+	padding: {
+		left: 35px;
+	}
+	margin: {
+		top: 21px;
+		left: 50px;
+	}
+	@include respond-to(medium) {
+		margin-left: 30px;
+	}
+	@include respond-to(small-max) {
+		display: none;
+	}
+
+
+	.footer__tool-free & {
+		display: none;
+		@include respond-to(small-max) {
+			display: block;
+			float: none;
+			margin: {
+				left: 0;
+				top: 10px;
+				bottom: 10px;
+			};
+		}
+	}
+
+
+	&__phone,
+	&__text {
+		line-height: 1.2;
+	}
+
+
+	&__phone {
+		font: {
+			size: 18px;
+			family: $f-R-bold;
+		};
+		color: $c-radical-red;
+		@include respond-to(medium) {
+			font-size: 14px;
+		}
+	}
+
+
+	&__text {
+		position: relative;
+		top: -2px;
+		font-size: 12px;
+		color: $c-grey-suit;
+	}
+
+
+	&__icon {
+		position: absolute;
+		left: 0;
+		top: 4px;
+		@include retina-sprite($sp-i-toolfree-group);
+	}
+}

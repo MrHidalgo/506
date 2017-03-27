@@ -1,0 +1,43 @@
+include ../../../_mixin/macrosMixin
+
+
+.slider__row.slider__row-0.clearfix
+    img(
+        src="./image/img-slider-0-pills0.png"
+        title=""
+        alt=""
+        class="slider__row-pills slider__row-pills-0"
+    )
+    img(
+        src="./image/img-slider-0-pills1.png"
+        title=""
+        alt=""
+        class="slider__row-pills slider__row-pills-1"
+    )
+
+    p.slider__free
+        i.slider__free-icon-0
+        | FREE
+        i.slider__free-icon-1
+
+    p.slider__title!= "Super Force Discount Pack"
+
+    span.slider__sub-title!= "Day of Deals"
+    span.slider__discount!= "75% OFF"
+
+    .slider__clearfix
+
+    .slider__price.slider__price-old
+        i.slider__price-bg-left
+        span.slider__price-text!= "$240.10"
+        i.slider__price-bg
+        i.slider__price-bg-right
+        i.slider__price-line
+
+    .slider__price.slider__price-new
+        i.slider__price-bg-left
+        span.slider__price-text!= "$130<sup>.80</sup>"
+        i.slider__price-bg
+        i.slider__price-bg-right
+
+    +btn("btn_small btn_normal slider__btn", "ADD TO CART")

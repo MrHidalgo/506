@@ -1,0 +1,32 @@
+
+.certificate
+    p(
+        class="certificate__title main__title"
+        data-id="Certified Pharmacy"
+    )!= "Certified Pharmacy"
+    .certificate__row
+        .certificate__block.certificate__block_first.clearfix
+            .certificate__img-box
+                .aligner
+                img(
+                    src="./image/img-certificate-4.png"
+                    title="Certificate image"
+                    alt="Certificate image"
+                    class="certificate__img img_responsive"
+                )
+            span(
+                class="certificate__text"
+                data-id= "Canadian Pharmacy is a licensed Pharmacy and is accredited by the Canadian International Pharmacy Association."
+            )!= "Canadian Pharmacy is a licensed Pharmacy and is accredited by the Canadian International Pharmacy Association."
+
+        .certificate__block
+                .aligner
+                .certificate__img-wrap
+                    -for(var j = 0; j < 4; j++)
+                        .certificate__img-box
+                            img(
+                                src="./image/img-certificate-" + j + ".png"
+                                title="Certificate image"
+                                alt="Certificate image"
+                                class="img_responsive"
+                            )

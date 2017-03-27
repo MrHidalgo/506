@@ -1,0 +1,301 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN
+///
+.menu {
+	height: 30px;
+	background-color: $c-white-smoke;
+	@include respond-to(small-max) {
+		position: absolute;
+		z-index: 100;
+		top: 0;
+		left: -100%;
+		@include mixinDimensions($w-all);
+		transition: left .3s ease-in-out;
+	}
+
+
+	.container {
+		@include respond-to(small-max) {
+			min-width: 0;
+			max-width: 100%;
+			min-height: 559px;
+			padding: {
+				left: 0;
+				right: 0;
+			};
+		}
+	}
+
+
+	.open-menu & {
+		display: block;
+		left: 0;
+		width: $w-all;
+		background-color: transparent;
+		overflow-y: auto;
+		transition: left .3s ease-in-out;
+	}
+
+
+	.open-popup & {
+		@include respond-to(small-max) {
+			overflow: hidden;
+		}
+	}
+
+
+	&__container {
+		@include respond-to(small-max) {
+			width: calc(100% - 55px);
+			min-height: 559px;
+			height: 100%;
+			background-color: $c-white;
+			transition: left .3s ease-in-out;
+
+
+			.open-menu & {
+				position: relative;
+			}
+		}
+	}
+
+
+	&__row {
+		display: table;
+		*display: block;
+		width: $w-all;
+		@include respond-to(medium) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		@include respond-to(small-max) {
+			display: block;
+			padding: {
+				left: 15px;
+				right: 15px;
+			};
+		}
+	}
+
+
+	&__burger {
+		display: none;
+		@include respond-to(small-max) {
+			display: block;
+			position: absolute;
+			right: -55px;
+			top: 0;
+			@include mixinDimensions(55px);
+			padding-left: 15px;
+
+
+			.open-menu & {
+				background-color: $c-white-smoke;
+				transition: right, background-color .3s ease-in-out;
+			}
+		}
+	}
+
+
+	&__search {
+		display: none;
+		padding: {
+			top: 7px;
+			bottom: 7px;
+			left: 15px;
+			right: 15px;
+		};
+		@include respond-to(small-max) {
+			display: block;
+		}
+
+
+		.search__wrap,
+		.search__input {
+			width: $w-all;
+		}
+
+
+		.search__input {
+			height: 42px;
+			@include respond-to(medium-max) {
+				height: 45px;
+			}
+		}
+
+
+		.search {
+			display: block;
+		}
+	}
+
+
+	&__select {
+		display: none;
+		padding: {
+			left: 15px;
+			right: 15px;
+		};
+		@include respond-to(small-max) {
+			display: block;
+		}
+
+
+		.input__select {
+			margin-top: 10px;
+		}
+	}
+
+
+	&__toolfree {
+		display: none;
+		@include respond-to(small-max) {
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: $w-all;
+			padding: {
+				left: 15px;
+				right: 15px;
+			};
+		}
+
+
+		.tollfree {
+			display: block;
+			@include mixinDimensions($w-all, 55px);
+			margin: {
+				top: 0;
+				left: 0;
+			}
+			padding-top: 10px;
+			border-top: 1px solid $c-gainsboro;
+
+
+			&__phone,
+			&__text {
+				font-size: 14px;
+				top: 0;
+			}
+
+			&__icon {
+				top: 15px;
+			}
+		}
+	}
+
+
+	&__btn {
+		display: table-cell;
+		*float: left;
+		font: {
+			size: 14px;
+		};
+		letter-spacing: -0.15px;
+		text-align: center;
+		line-height: 30px;
+		*width: ((1170 - 200) / 6) * 1px;
+		@include respond-to(medium) {
+			font: {
+				size: 12px;
+			};
+			width: auto;
+		}
+		@include respond-to(small-max) {
+			position: relative;
+			display: block;
+			font: {
+				size: 16px;
+				family: $f-RW-heavy;
+			};
+			text-align: left;
+			height: 47px;
+			line-height: 47px;
+
+
+			&:active {
+				.menu__btn-icon {
+					@include retina-sprite($sp-i-btn-arrow-tap-group);
+				}
+			}
+		}
+
+
+		&-cart {
+			display: none;
+			@include respond-to(small-max) {
+				vertical-align: middle;
+				width: 28px;
+				height: 28px;
+				line-height: 28px;
+				background-color: $c-radical-red;
+				border-radius: 100%;
+				margin-left: 15px;
+				color: #fff;
+				text-align: center;
+				font: {
+					size: 14px;
+					family: $f-R-medium;
+				};
+			}
+
+			.cart_fill & {
+				display: inline-block;
+			}
+		}
+
+
+		&-coupon {
+			width: 200px;
+			@include respond-to(medium) {
+				width: auto;
+			}
+			@include respond-to(small-max) {
+				width: auto;
+			}
+
+
+			&_info {
+				display: none;
+				vertical-align: middle;
+				height: 15px;
+				line-height: 1.6;
+				padding: {
+					left: 8px;
+					right: 8px;
+				};
+				margin-left: 7px;
+				font: {
+					size: 10px;
+					family: $f-R-bold;
+				};
+				color: $c-white;
+				background-color: $c-robins-egg-blue;
+				border-radius: 2em;
+
+
+				&.show {
+					display: inline-block;  *display: inline;  *zoom: 1;
+				}
+			}
+		}
+
+
+		&-icon {
+			@include respond-to(small-max) {
+				position: absolute;
+				top: 16px;
+				right: 0;
+				@include retina-sprite($sp-i-btn-arrow-group);
+			}
+		}
+	}
+}

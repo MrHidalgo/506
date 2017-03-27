@@ -1,0 +1,351 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// VARIABLE
+///
+$search__width  : 532px;
+$search__width-LARGE  : 322px;
+$search__width-MEDIUM : 282px;
+///
+/// MAIN
+///
+.search {
+	float: left;
+	margin: {
+		top: 16px;
+		left: 50px;
+	}
+	@include respond-to(medium-max) {
+		margin-left: 30px;
+		width: calc(100% - 470px);
+	}
+	@include respond-to(small-max) {
+		float: none;
+		margin: 0;
+		position: absolute;
+		z-index: 10;
+		left: 135px;
+		top: 54px;
+		width: calc(100% - 135px);
+		height: 45px;
+	}
+
+
+	&__active {
+		position: fixed;
+		z-index: 100;
+		left: 0;
+		top: 0;
+		@include mixinDimensions($w-all);
+		overflow: hidden;
+		background-color: $c-white;
+		margin: 0;
+	}
+
+
+	&__row {
+		.search__active & {
+			position: relative;
+			width: 940px;
+			margin: {
+				top: 45px;
+				left: auto;
+				right: auto;
+			};
+			@include respond-to(medium-max) {
+				width: $w-all;
+				margin: {
+					top: 7px;
+				};
+			}
+		}
+	}
+
+
+	&__wrap {
+		position: relative;
+		width: $search__width;
+		height: 42px;
+		@include respond-to(large) {
+			width: $search__width-LARGE;
+		}
+		@include respond-to(medium-max) {
+			width: $w-all;
+		}
+		@include respond-to(small-max) {
+			height: 45px;
+		}
+
+
+		.search__active &{
+			width: (940px - (100));
+			margin-bottom: 45px;
+			@include respond-to(medium-max) {
+				width: calc(100% - (100px + 15px));
+				margin: {
+					left: 15px;
+					bottom: 7px;
+				}
+			}
+		}
+	}
+
+
+	&__input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: {
+			left: 15px;
+			right: (3 + 3 + 3 + 44 + 44) * 1px;
+			top: 0;
+			bottom: 0;
+		};
+		border: 1px solid $c-gainsboro;
+		border-radius: 0;
+		width: ($search__width - (15 + 97) - 2);
+		height: (42 - 2) * 1px;
+		font: {
+			size: 14px;
+			family: $f-R-regular;
+		}
+		@include respond-to(large) {
+			width: ($search__width-LARGE - (15 + 97) - 2);
+		}
+		@include respond-to(medium) {
+			//width: ($search__width-MEDIUM - (15 + 97) - 2);
+			@include mixinDimensions($w-all, 42px);
+		}
+		@include respond-to(small-max) {
+			font-size: 12px;
+			@include mixinDimensions($w-all);
+		}
+
+
+		.search__active &{
+			width: (940px - (100) - (15 + 97) - 2);
+			@include respond-to(medium-max) {
+				width: $w-all;
+			}
+		}
+	}
+
+
+	&__btn {
+		position: absolute;
+		top: 3px;
+		@include mixinDimensions(44px, 36px);
+		@include respond-to(small-max) {
+			top: 4px;
+			height: 37px;
+		}
+
+
+		&-search {
+			right: 3px;
+			background-color: $c-black;
+
+
+			.search__btn-icon {
+				margin: {
+					top: 11px;
+					left: 15px;
+				}
+				@include retina-sprite($sp-i-search-group);
+			}
+		}
+
+
+		&-clear {
+			opacity: 0;
+			right: 50px;
+			background-color: $c-white;
+
+
+			.focus & {
+				opacity: 1;
+				transition: opacity .3s ease-in-out;
+			}
+
+
+			.search__btn-icon {
+				margin: {
+					top: 13px;
+					left: 18px;
+				}
+				@include retina-sprite($sp-i-search-clear-group);
+			}
+		}
+
+
+		&-icon {
+			display: block;
+		}
+	}
+
+
+	&__cancel {
+		display: none;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 100px;
+		height: 42px;
+		line-height: 42px;
+		text-align: center;
+		font-size: 14px;
+		color: $c-navy-blue;
+		text-decoration: underline;
+
+
+		.search__active & {
+			display: block;
+		}
+	}
+
+
+	&__content {
+		display: none;
+		position: relative;
+		width: 940px;
+		// 300 = (search-view: 120px + (search-wrap + letter): 180px)
+		height: calc(100% - 300px);
+		margin: {
+			left: auto;
+			right: auto;
+		};
+		overflow-y: auto;
+		@include respond-to(medium-max) {
+			width: $w-all;
+			height: calc(100% - (120px + 102px));
+			padding: {
+				left: 15px;
+				right: 15px;
+			};
+		}
+
+
+		.search__active & {
+			display: block;
+		}
+
+
+		&_letter {
+			height: calc(100% - (120px + 102px + 160px));
+		}
+
+
+		&_empty {
+			position: absolute;
+			top: 50%;
+			width: $w-all - 10;
+			margin-top: -11px;
+			font: {
+				family: $f-RW-regular;
+				style: italic;
+			};
+			text-align: center;
+			color: $c-grey-suit;
+		}
+
+
+		&_full {
+			display: none;
+		}
+	}
+
+
+	&__view {
+		display: none;
+		position: absolute;
+		z-index: 10;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		@include mixinDimensions(940px, 120px);
+		margin: {
+			left: auto;
+			right: auto;
+		};
+		border-top: 1px solid $c-whisper;
+		background-color: $c-white;
+		text-align: center;
+		@include respond-to(medium-max) {
+			width: $w-all;
+			box-shadow: 0 -2px 4px 0 rgba(0,0,0,0.06);
+		}
+
+
+		.search__active & {
+			display: block;
+		}
+
+
+		&-btn,
+		&-icon {
+			display: inline-block;  *display: inline;  *zoom: 1;
+		}
+
+
+		&-btn {
+			margin-top: 30px;
+
+
+			&:hover {
+				.search__view-icon {
+					margin: {
+						top: 9px;
+						left: 9px;
+					}
+					@include retina-sprite($sp-i-search-view-hover-group);
+
+
+					&--wrap {
+						*background-color: $c-white;
+						background-color: rgba($c-radical-red, 0.05);
+						transition: background .3s ease-in-out;
+					}
+				}
+			}
+		}
+
+
+		&-icon {
+			display: block;
+			margin: {
+				top: 12px;
+				left: 8px;
+			}
+			@include retina-sprite($sp-i-search-view-group);
+
+
+			&--wrap {
+				display: inline-block;  *display: inline;  *zoom: 1;
+				@include mixinDimensions(30px);
+				border: 2px solid $c-radical-red;
+				border-radius: $w-all;
+				background-color: $c-radical-red;
+				@include respond-to(medium-max) {
+					@include mixinDimensions(34px);
+				}
+			}
+		}
+
+
+		&-text {
+			font: {
+				size: 14px;
+				family: $f-RW-bold;
+			}
+			color: $c-radical-red;
+		}
+	}
+}
+input.search__input::-webkit-input-placeholder {color: $c-grey-suit;}
+input.search__input::-moz-placeholder {color: $c-grey-suit;}
+input.search__input:-moz-placeholder {color: $c-grey-suit;}
+input.search__input::placeholder {color: $c-grey-suit;}

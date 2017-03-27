@@ -1,0 +1,93 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN
+///
+.coupon {
+	text-align: left;
+	@include mixinDimensions((460px - (50 * 2)), 142px);
+	padding: {
+		left: 50px;
+		right: 50px;
+	};
+	background-color: $c-azure-darken;
+	@include respond-to(large-max) {
+		height: 146px;
+	}
+	@include respond-to(medium) {
+		width: $w-all;
+
+	}
+	@include respond-to(small-max) {
+		@include mixinDimensions($w-all, auto);
+		padding: 15px;
+		background-color: $c-white;
+	}
+
+
+	&__title {
+		font-size: 14px;
+		padding: {
+			top: 30px;
+			bottom: 10px;
+		}
+		@include respond-to(small-max) {
+			padding-top: 0;
+		}
+	}
+
+
+	&__filed {
+		position: relative;
+		@include mixinDimensions(360px, 42px);
+		@include respond-to(medium-max) {
+			width: $w-all;
+		}
+	}
+
+
+	&__input {
+		padding: {
+			top: 0;
+			bottom: 0;
+			left: 15px;
+			right: 55px;
+		};
+		border-radius: 0;
+		border: 1px solid $c-gainsboro;
+		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.06);
+		width: (360px - (15 + 55) - (1 * 2));
+		height: (42px - (1 * 2));
+		@include respond-to(medium-max) {
+			width: $w-all;
+		}
+	}
+
+
+	&__label {
+		cursor: pointer;
+		position: absolute;
+		top: 7px;
+		right: 7px;
+		background-color: $c-radical-red;
+		border-radius: 6px;
+		@include mixinDimensions(40px, 28px);
+		@include respond-to(medium-max) {
+			top: 6px;
+		}
+
+
+		&-icon {
+			display: block;
+			margin: {
+				left: 17px;
+				top: 7px;
+			}
+			@include retina-sprite($sp-i-input-coupon-arr-group);
+		}
+	}
+}

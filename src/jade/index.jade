@@ -1,0 +1,116 @@
+include _mixin/mixin
+include _mixin/macrosMixin
+
+doctype html
+// if JavaScript disable in page add class "no-js"
+html(
+    lang="en"
+    class="js"
+)
+
+
+    +headSite("506", linkSite.styleLinkIndex, "")
+
+    // open-menu open-popup cart_fill
+    body(class="cart_fill")
+
+
+        include _template/menu
+        include _template/header
+        include _template/category
+
+        .body__row
+            .container
+
+                include _template/slider
+
+                .main__title-wrap.main__title-wrap--hide.clearfix
+                    +mainTitle("main__title_left", "Best Selling")
+                    +btnViewAll("btn__view_right")
+
+                .main__title-wrap.main__title-wrap--show.clearfix
+                    +mainTitle("main__title_category btn-prod-js active", "Best Selling", "0")
+                    +mainTitle("main__title_category btn-prod-js", "Categories", "1")
+
+                .row_shadow.row_best
+                    // class for modify product position: [product_grid, product_list, product_gallery]
+                    .product.product_grid.product_best.clearfix
+                        +productBox(6, false, false)
+
+                include ./_template/categories
+
+                .main__title-wrap.clearfix
+                    +mainTitle("main__title_left", "ED Packs")
+                    +btnViewAll("btn__view_right")
+
+                .row_shadow
+                    // class for modify product position: [product_grid, product_list, product_gallery]
+                    .product.product_grid.product_pack.clearfix
+                        +productBox(6, true, false)
+
+                include ./_template/flash
+
+                .main__title-wrap.clearfix
+                    +mainTitle("main__title_left", "Trending Now")
+                    +btnViewAll("btn__view_right")
+
+                include ./_template/tabs
+
+                .main__title-wrap.main__title-wrap_border--top.clearfix
+                    +mainTitle("main__title_left", "Popular Categories")
+
+                include ./_template/tabulate
+
+                .bottom-info.clearfix
+                    .bottom-info_right
+                        include ./_template/go-top
+                    .bottom-info_centered
+                        include ./_template/coupon
+                    .bottom-info_left
+                        include ./_template/certificate
+
+
+        include ./_template/footer
+
+        include ./_template/bottom-certificate
+
+        include _template/modal__coupon
+        include _template/slide-letter
+
+        //- BREADCRUMBS
+        //include _template/breadcrumbs
+
+        div(class="lang__btn", style="text-align:center; padding-top:50px; padding-bottom:15px; position:relative; z-index;100;")
+            a(
+            href="javascript:void(0);"
+            data-lang="en"
+            )!= "|| -- EN -- ||"
+            a(
+            href="javascript:void(0);"
+            data-lang="de"
+            )!= "-- DE -- ||"
+            a(
+            href="javascript:void(0);"
+            data-lang="fr"
+            )!= "-- FR -- ||"
+            a(
+            href="javascript:void(0);"
+            data-lang="it"
+            )!= "-- IT -- ||"
+            a(
+            href="javascript:void(0);"
+            data-lang="pt"
+            )!= "-- PT -- ||"
+            a(
+            href="javascript:void(0);"
+            data-lang="es"
+            )!= "-- ES -- ||"
+            a(
+            href="javascript:void(0);"
+            data-lang="jp"
+            )!= "-- JP -- ||"
+
+
+
+    - for(var i = 0; i < linkSite.scriptLink.length; i++)
+        script(src= linkSite.scriptLink[i])

@@ -1,0 +1,55 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// VAR
+///
+$imgLogotypeWidth : 414px;
+$imgLogotypeWidthMedium : 222px;
+///
+/// MAIN
+///
+.logotype {
+	cursor: pointer;
+	float: left;
+	padding-top: 23px;
+	@include respond-to(medium) {
+		padding-left: 30px;
+	}
+	@include respond-to(small-max) {
+		float: none;
+		position: absolute;
+		width: $imgLogotypeWidthMedium / 2;
+		z-index: 0;
+		left: 0;
+		right: 0;
+		top: 13px;
+		padding-top: 0;
+		margin: {
+			left: auto;
+			right: auto;
+		};
+	}
+
+
+	&__img {
+		&_large {
+			width: ($imgLogotypeWidth / 2);
+			@include respond-to(medium-max) {
+				display: none;
+			}
+		}
+
+
+		&_medium {
+			display: none;
+			width: ($imgLogotypeWidthMedium / 2);
+			@include respond-to(medium-max) {
+				display: block;
+			}
+		}
+	}
+}

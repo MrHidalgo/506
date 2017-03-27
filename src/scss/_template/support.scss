@@ -1,0 +1,75 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN
+///
+.support {
+	@include respond-to(small-max) {
+		display: none;
+	}
+
+
+	&__title {
+		font: {
+			size: 14px;
+			family: $f-RW-medium;
+		};
+		margin-bottom: 10px;
+
+
+		.footer_row-acc & {
+			@include respond-to(small-max) {
+				height: 45px;
+				line-height: 45px;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+
+	&__icon-arr {
+		@include respond-to(small-max) {
+			position: absolute;
+			top: 16px;
+			right: 0;
+			@include retina-sprite($sp-i-letter-slide-right-group);
+		}
+	}
+
+
+	&__work {
+		font-size: 12px;
+		color: $c-grey-suit;
+		margin-bottom: 20px;
+	}
+
+
+	&__tool-free,
+	&__email,
+	&__service {
+		font-size: 14px;
+
+
+		&-text {
+			color: $c-grey-suit;
+		}
+
+
+		&-btn {
+			color: $c-navy-blue;
+			margin-left: 10px;
+		}
+	}
+
+
+	&__email,
+	&__service {
+		&-btn {
+			text-decoration: underline;
+		}
+	}
+}

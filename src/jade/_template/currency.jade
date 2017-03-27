@@ -1,0 +1,32 @@
+-
+    var currencyArr = [
+        "$ USD",
+        "€ EUR",
+        "CA$ CAD",
+        "£ GBP",
+        "CHF CHF",
+        "A$ AUD",
+        "円 JPY",
+        "R$ BRL",
+        "$ MXN",
+        "$ NZD"
+    ];
+
+
+.currency
+    a(
+        href="javascript:void(0);"
+        title="Currency"
+        class="currency__btn"
+    )
+        span.currency__text!= "USD"
+        i.currency__icon
+
+    .currency__drop.drop__down
+        -for(var i = 0; i < currencyArr.length; i++)
+            a(
+                href="javascript:void(0);"
+                title="Currency"
+                class="currency__btn-drop drop__down-btn"
+            )!= currencyArr[i]
+
