@@ -13,44 +13,35 @@
         a(
             href="javascript:void(0);"
             title!=tabsArr[i]
-            class!= (i === 0) ? "tabs__btn tabs__btn_first active" : (i === tabsArr.length - 1) ? "tabs__btn tabs__btn_last" : "tabs__btn"
+            class!=
+                (i === 0) ? "tabs__btn tabs__btn_first active"
+                    : (i === tabsArr.length - 1) ? "tabs__btn tabs__btn_last"
+                    : "tabs__btn"
             data-tabs!= i
             data-id!=tabsArr[i]
         )!= tabsArr[i]
 
 // class for modify product position: [product_grid, product_list, product_gallery]
-div(
-    class="product__tabs product__tabs-0"
-)
-    .product.product_grid.product_centered.product_wrap.clearfix
+div(class="product__tabs product__tabs-0")
+    .product.product_grid.product_centered.clearfix
         +productBox(12, true, false)
-div(
-    class="product__tabs product__tabs-1"
-    style="display:none;"
-)
-    .product.product_grid.product_centered.product_wrap.clearfix
+
+div(class="product__tabs product__tabs-1" style="display:none;")
+    .product.product_grid.product_centered.clearfix
         +productBox(10, true, false)
-div(
-    class="product__tabs product__tabs-2"
-    style="display:none;"
-)
-    .product.product_grid.product_centered.product_wrap.clearfix
+
+div(class="product__tabs product__tabs-2" style="display:none;")
+    .product.product_grid.product_centered.clearfix
         +productBox(12, true, false)
-div(
-    class="product__tabs product__tabs-3"
-    style="display:none;"
-)
-    .product.product_grid.product_centered.product_wrap.clearfix
+
+div(class="product__tabs product__tabs-3" style="display:none;")
+    .product.product_grid.product_centered.clearfix
         +productBox(10, true, false)
-div(
-    class="product__tabs product__tabs-4"
-    style="display:none;"
-)
-    .product.product_grid.product_centered.product_wrap.clearfix
+
+div(class="product__tabs product__tabs-4" style="display:none;")
+    .product.product_grid.product_centered.clearfix
         +productBox(12, true, false)
-div(
-    class="product__tabs product__tabs-5"
-    style="display:none;"
-)
-    .product.product_grid.product_centered.product_wrap.clearfix
+
+div(class="product__tabs product__tabs-5" style="display:none;")
+    .product.product_grid.product_centered.clearfix
         +productBox(7, true, false)

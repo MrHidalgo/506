@@ -5,5 +5,8 @@ a(
     class="tollfree"
 )
     p.tollfree__phone!= "+ 1 844 241 14 68"
-    p.tollfree__text!= "We are never closed!"
+    p(
+        class="tollfree__text"
+        data-id="We are never closed!"
+    )!= "We are never closed!"
     i.tollfree__icon

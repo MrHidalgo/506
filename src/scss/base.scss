@@ -36,6 +36,9 @@
 		family: $f-RW-bold;
 	};
 	transition: background .3s ease-in-out;
+	@include respond-to(extra-small) {
+		font-size: 12px;
+	}
 
 
 	&:hover,
@@ -164,6 +167,7 @@
 		display: block;
 		height: 110px;
 		text-align: center;
+		border-top: 1px solid $c-whisper;
 
 
 		&:hover {
@@ -228,6 +232,24 @@
 		line-height: 44px;
 		@include respond-to(small-max) {
 			padding-left: 15px;
+			font-size: 16px;
+			line-height: normal;
+
+
+			&:before {
+				content: "";
+				display: inline-block;
+				vertical-align: middle;
+				height: $w-all;
+			}
+		}
+
+
+		&-text {
+			@include respond-to(small-max) {
+				display: inline-block;
+				vertical-align: middle;
+			}
 		}
 
 
@@ -254,6 +276,9 @@
 				margin: {
 					left: 25px;
 				};
+			}
+			@include respond-to(small-max) {
+				position: relative;
 			}
 
 
@@ -283,6 +308,9 @@
 
 		&_left {
 			float: left;
+			@include respond-to(small-max) {
+				//float: none;
+			}
 		}
 	}
 }
@@ -351,39 +379,6 @@ select {
 	}
 }
 ///
-/// SHADOW IN MEDIUM/SMALL DEVICE
-///
-.row_shadow {
-	position: relative;
-	border-bottom: 1px solid $c-whisper;
-
-
-	&:after {
-		position: absolute;
-		z-index: 0;
-		top: 0;
-		right: 0;
-		@include mixinDimensions(50%, $w-all);
-		background: -moz-linear-gradient(left,  rgba(231,231,231,0) 0%, rgba(231,231,231,1) 100%);
-		background: -webkit-linear-gradient(left,  rgba(231,231,231,0) 0%,rgba(231,231,231,1) 100%);
-		background: linear-gradient(to right,  rgba(231,231,231,0) 0%,rgba(231,231,231,1) 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e7e7e7', endColorstr='#e7e7e7',GradientType=1 );
-		@include respond-to(medium) {
-			content: "";
-		}
-	}
-
-
-	&.row_best,
-	&.row_categories {
-		&:after {
-			@include respond-to(small-max) {
-				content: "";
-			}
-		}
-	}
-}
-///
 /// BOTTOM INFO
 ///
 .bottom-info {
@@ -391,6 +386,9 @@ select {
 	margin-bottom: 30px;
 	@include respond-to(medium) {
 		margin-bottom: 6px;
+	}
+	@include respond-to(small-max) {
+		margin-bottom: 15px;
 	}
 
 
@@ -476,6 +474,11 @@ select {
 .category__view {
 	float: right;
 	height: 44px;
+	@include respond-to(small-max) {
+		display: block;
+		width: $w-all;
+		text-align: center;
+	}
 
 
 	&-btn {
@@ -491,6 +494,17 @@ select {
 			left: 20px;
 		};
 		color: $c-radical-red;
+		@include respond-to(medium-max) {
+			height: 45px;
+		}
+		@include respond-to(small-max) {
+			border-top: 1px solid $c-whisper;
+			width: (100% / 3);
+			margin: {
+				left: 0;
+				right: 0;
+			};
+		}
 
 
 		&.active {
@@ -541,5 +555,50 @@ select {
 				@include retina-sprite($sp-i-gallery-active-group);
 			}
 		}
+	}
+}
+///
+/// RATING
+///
+.rating {
+	display: inline-block;  *display: inline;  *zoom: 1;
+	margin-left: 15px;
+	margin-top: 10px;
+
+
+	&__icon {
+		display: inline-block;  *display: inline;  *zoom: 1;
+		vertical-align: middle;
+	}
+
+
+	&_four {
+		.rating__icon {
+			@include retina-sprite($sp-i-rating-four-group);
+		}
+	}
+	&_five {
+		.rating__icon {
+			@include retina-sprite($sp-i-rating-five-group);
+		}
+	}
+}
+///
+/// ROW
+///
+.row {
+	&_left,
+	&_right {
+		float: left;
+		height: $w-all;
+	}
+
+
+	&_left {
+		width: 290px;
+		text-align: center;
+	}
+	&_right {
+		width: 660px;
 	}
 }

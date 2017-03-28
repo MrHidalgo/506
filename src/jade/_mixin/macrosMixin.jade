@@ -12,9 +12,12 @@ mixin btn(className, text)
 mixin mainTitle(className, text, attr)
     p(
         class="main__title " + className
-        data-id=text
         data-js=attr
-    )!= text
+    )
+        span(
+            class="main__title-text"
+            data-id=text
+        )!= text
 
 
 //- BTN VIEW ALL

@@ -55,14 +55,14 @@
           </div>
           <div class="menu__toolfree"><a href="tel:+18442411468" title="tollfree" class="tollfree">
               <p class="tollfree__phone">+ 1 844 241 14 68</p>
-              <p class="tollfree__text">We are never closed!</p><i class="tollfree__icon"></i></a></div>
+              <p data-id="We are never closed!" class="tollfree__text">We are never closed!</p><i class="tollfree__icon"></i></a></div>
         </div>
       </div>
     </div>
     <div class="header">
       <div class="container clearfix"><a href="/" title="Logotype" class="logotype"><img src="./image/img-logotype@2x.png" title="Canada Pharmacy exclusive discount-store" alt="Canada Pharmacy exclusive discount-store" class="logotype__img logotype__img_large"><img src="./image/img-logotype-medium@2x.png" title="Canada Pharmacy exclusive discount-store" alt="Canada Pharmacy exclusive discount-store" class="logotype__img logotype__img_medium logotype__img_retina"></a><a href="tel:+18442411468" title="tollfree" class="tollfree">
           <p class="tollfree__phone">+ 1 844 241 14 68</p>
-          <p class="tollfree__text">We are never closed!</p><i class="tollfree__icon"></i></a>
+          <p data-id="We are never closed!" class="tollfree__text">We are never closed!</p><i class="tollfree__icon"></i></a>
         <!-- add class .search__active for visible search result-->
         <div class="search">
           <div class="search__row">
@@ -304,15 +304,18 @@
           <div class="slider__btn-wrap"><a href="javascript:void(0);" title="" class="slider__btn slider__btn-left"><i class="slider__btn-icon"></i></a><a href="javascript:void(0);" title="" class="slider__btn slider__btn-right"><i class="slider__btn-icon"></i></a></div>
         </div>
         <div class="main__title-wrap main__title-wrap--hide clearfix">
-                      <p data-id="Best Selling" class="main__title main__title_left">Best Selling</p><a href="javascript:void(0);" title="" class="btn__view btn__view_right"><span data-id="View All" class="btn__view-text">View All</span><i class="btn__view-icon"></i></a>
+                      <p class="main__title main__title_left"><span data-id="Best Selling" class="main__title-text">Best Selling</span></p><a href="javascript:void(0);" title="" class="btn__view btn__view_right"><span data-id="View All" class="btn__view-text">View All</span><i class="btn__view-icon"></i></a>
         </div>
         <div class="main__title-wrap main__title-wrap--show clearfix">
-                      <p data-id="Best Selling" data-js="0" class="main__title main__title_category btn-prod-js active">Best Selling</p>
-                      <p data-id="Categories" data-js="1" class="main__title main__title_category btn-prod-js">Categories</p>
+                      <p data-js="0" class="main__title main__title_category btn-prod-js active"><span data-id="Best Selling" class="main__title-text">Best Selling</span></p>
+                      <p data-js="1" class="main__title main__title_category btn-prod-js"><span data-id="Categories" class="main__title-text">Categories</span></p>
         </div>
-        <div class="row_shadow row_best">
+        <!-- class [row_nowrap]       - for horizontal scroll product in medium device-->
+        <!-- class [row_shadow]       - for horizontal scroll product gradient right-->
+        <!-- class [row_mediumMax, row_medium]    - for horizontal scroll in small device-->
+        <div class="row_shadow row_nowrap row_mediumMax row_mobileCategories-js">
           <!-- class for modify product position: [product_grid, product_list, product_gallery]-->
-          <div class="product product_grid product_best clearfix">
+          <div class="product product_grid clearfix">
                         <div class="product__box">
                           <div class="product__img-wrap"><img src="./image/img-product.png" title="Product image" alt="Product image" class="product__img"></div>
                           <div class="product__info-wrap">
@@ -396,9 +399,9 @@
         <div class="categories">
           <div class="categories__box active"><a href="javascript:void(0);" title="Ed Packs" class="categories__title btn-categories-js"><span class="categories__title-text">Ed Packs</span><i class="categories__title-icon"></i></a>
             <div class="categories__drop">
-              <div class="row_shadow row_categories">
+              <div class="row_shadow row_nowrap row_mediumMax">
                 <!-- class for modify product position: [product_grid, product_list, product_gallery]-->
-                <div class="product product_grid product_best clearfix">
+                <div class="product product_grid clearfix">
                               <div class="product__box">
                                 <div class="product__img-wrap"><img src="./image/img-product.png" title="Product image" alt="Product image" class="product__img"></div>
                                 <div class="product__info-wrap">
@@ -631,11 +634,12 @@
           </div>
         </div>
         <div class="main__title-wrap clearfix">
-                      <p data-id="ED Packs" class="main__title main__title_left">ED Packs</p><a href="javascript:void(0);" title="" class="btn__view btn__view_right"><span data-id="View All" class="btn__view-text">View All</span><i class="btn__view-icon"></i></a>
+                      <p class="main__title main__title_left"><span data-id="ED Packs" class="main__title-text">ED Packs</span></p><a href="javascript:void(0);" title="" class="btn__view btn__view_right"><span data-id="View All" class="btn__view-text">View All</span><i class="btn__view-icon"></i></a>
         </div>
-        <div class="row_shadow">
+        <!-- class [row_list] - for transform block in small device (removeClass("product_grid").addClass("product_list"))-->
+        <div class="row_shadow row_nowrap row_medium row_list">
           <!-- class for modify product position: [product_grid, product_list, product_gallery]-->
-          <div class="product product_grid product_pack clearfix">
+          <div class="product product_grid clearfix">
                         <div class="product__box">
                           <div class="product__img-wrap"><img src="./image/img-product.png" title="Product image" alt="Product image" class="product__img"></div>
                           <div class="product__info-wrap">
@@ -767,13 +771,13 @@
           </div>
         </div>
         <div class="main__title-wrap clearfix">
-                      <p data-id="Trending Now" class="main__title main__title_left">Trending Now</p><a href="javascript:void(0);" title="" class="btn__view btn__view_right"><span data-id="View All" class="btn__view-text">View All</span><i class="btn__view-icon"></i></a>
+                      <p class="main__title main__title_left"><span data-id="Trending Now" class="main__title-text">Trending Now</span></p><a href="javascript:void(0);" title="" class="btn__view btn__view_right"><span data-id="View All" class="btn__view-text">View All</span><i class="btn__view-icon"></i></a>
         </div>
         <div class="tabs clearfix"><a href="javascript:void(0);" title="Today Deals" data-tabs='0' data-id="Today Deals" class="tabs__btn tabs__btn_first active">Today Deals</a><a href="javascript:void(0);" title="Big Sale" data-tabs='1' data-id="Big Sale" class="tabs__btn">Big Sale</a><a href="javascript:void(0);" title="NEW" data-tabs='2' data-id="NEW" class="tabs__btn">NEW</a><a href="javascript:void(0);" title="Antibiotics" data-tabs='3' data-id="Antibiotics" class="tabs__btn">Antibiotics</a><a href="javascript:void(0);" title="Antiviral" data-tabs='4' data-id="Antiviral" class="tabs__btn tabs__btn_last">Antiviral</a>
         </div>
         <!-- class for modify product position: [product_grid, product_list, product_gallery]-->
         <div class="product__tabs product__tabs-0">
-          <div class="product product_grid product_centered product_wrap clearfix">
+          <div class="product product_grid product_centered clearfix">
                         <div class="product__box">
                           <div class="product__img-wrap"><img src="./image/img-product.png" title="Product image" alt="Product image" class="product__img"></div>
                           <div class="product__info-wrap">
@@ -909,7 +913,7 @@
           </div>
         </div>
         <div style="display:none;" class="product__tabs product__tabs-1">
-          <div class="product product_grid product_centered product_wrap clearfix">
+          <div class="product product_grid product_centered clearfix">
                         <div class="product__box">
                           <div class="product__img-wrap"><img src="./image/img-product.png" title="Product image" alt="Product image" class="product__img"></div>
                           <div class="product__info-wrap">
@@ -1023,7 +1027,7 @@
           </div>
         </div>
         <div style="display:none;" class="product__tabs product__tabs-2">
-          <div class="product product_grid product_centered product_wrap clearfix">
+          <div class="product product_grid product_centered clearfix">
                         <div class="product__box">
                           <div class="product__img-wrap"><img src="./image/img-product.png" title="Product image" alt="Product image" class="product__img"></div>
                           <div class="product__info-wrap">
@@ -1159,7 +1163,7 @@
           </div>
         </div>
         <div style="display:none;" class="product__tabs product__tabs-3">
-          <div class="product product_grid product_centered product_wrap clearfix">
+          <div class="product product_grid product_centered clearfix">
                         <div class="product__box">
                           <div class="product__img-wrap"><img src="./image/img-product.png" title="Product image" alt="Product image" class="product__img"></div>
                           <div class="product__info-wrap">
@@ -1273,7 +1277,7 @@
           </div>
         </div>
         <div style="display:none;" class="product__tabs product__tabs-4">
-          <div class="product product_grid product_centered product_wrap clearfix">
+          <div class="product product_grid product_centered clearfix">
                         <div class="product__box">
                           <div class="product__img-wrap"><img src="./image/img-product.png" title="Product image" alt="Product image" class="product__img"></div>
                           <div class="product__info-wrap">
@@ -1409,7 +1413,7 @@
           </div>
         </div>
         <div style="display:none;" class="product__tabs product__tabs-5">
-          <div class="product product_grid product_centered product_wrap clearfix">
+          <div class="product product_grid product_centered clearfix">
                         <div class="product__box">
                           <div class="product__img-wrap"><img src="./image/img-product.png" title="Product image" alt="Product image" class="product__img"></div>
                           <div class="product__info-wrap">
@@ -1490,7 +1494,7 @@
           </div>
         </div>
         <div class="main__title-wrap main__title-wrap_border--top clearfix">
-                      <p data-id="Popular Categories" class="main__title main__title_left">Popular Categories</p>
+                      <p class="main__title main__title_left"><span data-id="Popular Categories" class="main__title-text">Popular Categories</span></p>
         </div>
         <div class="tabulate clearfix"><a href="javascript:void(0);" title="Erectile Dysfunction" class="tabulate__btn">Erectile Dysfunction<i class="tabulate__btn-icon"></i></a><a href="javascript:void(0);" title="ED Packs" class="tabulate__btn">ED Packs<i class="tabulate__btn-icon"></i></a><a href="javascript:void(0);" title="Men's Health" class="tabulate__btn tabulate__btn_large">Men's Health<i class="tabulate__btn-icon"></i></a><a href="javascript:void(0);" title="Erectile Dysfunction" class="tabulate__btn tabulate__btn_big">Erectile Dysfunction<i class="tabulate__btn-icon"></i></a><a href="javascript:void(0);" title="ED Packs" class="tabulate__btn">ED Packs<i class="tabulate__btn-icon"></i></a><a href="javascript:void(0);" title="Men's Health" class="tabulate__btn tabulate__btn_large">Men's Health<i class="tabulate__btn-icon"></i></a><a href="javascript:void(0);" title="Erectile Dysfunction" class="tabulate__btn">Erectile Dysfunction<i class="tabulate__btn-icon"></i></a><a href="javascript:void(0);" title="ED Packs" class="tabulate__btn tabulate__btn_big">ED Packs<i class="tabulate__btn-icon"></i></a>
         </div>
@@ -1595,7 +1599,7 @@
           </div>
           <div class="footer__tool-free"><a href="tel:+18442411468" title="tollfree" class="tollfree">
               <p class="tollfree__phone">+ 1 844 241 14 68</p>
-              <p class="tollfree__text">We are never closed!</p><i class="tollfree__icon"></i></a></div>
+              <p data-id="We are never closed!" class="tollfree__text">We are never closed!</p><i class="tollfree__icon"></i></a></div>
         </div>
       </div>
       <div class="footer__bottom">
@@ -1648,7 +1652,6 @@
         </div>
       </div>
     </div>
-    <!--include _template/breadcrumbs-->
     <div style="text-align:center; padding-top:50px; padding-bottom:15px; position:relative; z-index;100;" class="lang__btn"><a href="javascript:void(0);" data-lang="en">|| -- EN -- ||</a><a href="javascript:void(0);" data-lang="de">-- DE -- ||</a><a href="javascript:void(0);" data-lang="fr">-- FR -- ||</a><a href="javascript:void(0);" data-lang="it">-- IT -- ||</a><a href="javascript:void(0);" data-lang="pt">-- PT -- ||</a><a href="javascript:void(0);" data-lang="es">-- ES -- ||</a><a href="javascript:void(0);" data-lang="jp">-- JP -- ||</a></div>
   </body>
   <script src="./vendor/js/jquery-1.11.1.min.js"></script>

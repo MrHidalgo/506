@@ -7,7 +7,10 @@
         data-view="grid"
     )
         i.category__view-icon
-        span.category__view-text!= "Grid"
+        span(
+            class="category__view-text"
+            data-id="Grid"
+        )!= "Grid"
     a(
         href="javascript:void(0);"
         title="Product view list"
@@ -15,7 +18,10 @@
         data-view="list"
     )
         i.category__view-icon
-        span.category__view-text!= "List"
+        span(
+            class="category__view-text"
+            data-id="List"
+        )!= "List"
     a(
         href="javascript:void(0);"
         title="Product view gallery"
@@ -23,4 +29,7 @@
         data-view="gallery"
     )
         i.category__view-icon
-        span.category__view-text!= "Gallery"
+        span(
+            class="category__view-text"
+            data-id="Gallery"
+        )!= "Gallery"

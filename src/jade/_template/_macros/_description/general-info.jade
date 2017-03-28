@@ -1,0 +1,50 @@
+-
+    var shortDescription = "Viagra is an anti-impotence drug which enables men to achieve and sustain an erection.</br>" +
+        "The active ingredient of Viagra is Sildenafil Citrate (<a href='javascript:void(0);' class='description-short__btn'>PDE-5 inhibitor</a>). " +
+        "In response to sexual arousal, <a href='javascript:void(0);' class='description-short__btn'>Sildenafil Citrate</a> " +
+        "stimulates the release of nitric oxide (NO) in the corpus cavernosum. Nitric oxide activates the lyase enzyme which is followed by increasing levels of " +
+        "<a href='javascript:void(0);' class='description-short__btn'>cyclic guanosine monophosphate</a> (cGMP). " +
+        "This cyclic nucleotide relaxes smooth muscles in blood vessels of the corpus cavernosum, increasing blood flow and thus inducing an erection.</br>" +
+        "Along with the treatment of erectile disorders, Viagra effectively prolongs sexual performance, " +
+        "preventing <a href='javascript:void(0);' class='description-short__btn'>premature ejaculation</a> (PE).</br>" +
+        "Sildenafil Citrate is also used in the treatment of PAH (<a href='javascript:void(0);' class='description-short__btn'>pulmonary arterial hypertension</a>).</br>" +
+        "Viagra is also known as Aphrodil, Caverta, <a href='javascript:void(0);' class='description-short__btn'>Kamagra, Suhagra</a>, " +
+        "Edegra, Erasmo, Penegra, Revatio, Supra, <a href='javascript:void(0);' class='description-short__btn'>Silagra</a>, Zwagra.</br>" +
+        "Viagra does not protect you or your partner from sexually transmitted diseases " +
+        "(including <a href='javascript:void(0);' class='description-short__btn'>HIV</a>) or from pregnancy.";
+    var shortDescriptionList = [
+        "25mg Min Dosage",
+        "50mg Low Dosage",
+        "100mg Standard Dosage",
+        "120mg Increased Dosage",
+        "130mg Max Dosage",
+        "150mg Extra Max Dosage",
+        "200mg Super Max Dosage"
+    ];
+
+
+p.description-short__title!= "DESCRIPTION"
+p.description-short__text!= shortDescription
+
+p.description-short__title!= "DOSAGE"
+p.description-short__text!= "Generic Viagra is available in:"
+ul.description-short__list
+    -for(var i = 0; i < shortDescriptionList.length; i++)
+        li.description-short__list-item
+            a(
+                href="javascript:void(0);"
+                title=shortDescriptionList[i]
+                class="description-short__btn"
+            )!= shortDescriptionList[i]
+p.description-short__text!= "Take one Viagra pill orally with a full glass of water, 30-60 minutes before sex."
+p.description-short__text!= "The dosage depends on the overall health of the patient. Do not take more than one pill per day."
+p.description-short__text!= "Take Viagra on an empty stomach, as fatty meals, grapefruit juice and alcohol can interfere with the effectiveness of the medication."
+
+p.description-short__title!= "MISSING A DOSE"
+p.description-short__text!= "Viagra is used only as needed, thus missed dosages are not relevant. However, you shouldn't take more than a doctor's recommended dose, and not more than once in 24 hours. Do not take a double dose of Viagra."
+
+p.description-short__title!= "OVERDOSE"
+p.description-short__text!= "If you take an overdose of Viagra, you should seek emergency medical attention or contact your healthcare provider immediately."
+
+p.description-short__title!= "STORAGE"
+p.description-short__text!= "Store at room temperature between 15 and 30 degrees C (59 and 86 degrees F) and away from excess moisture and heat. Throw away any unused medicine after the expiration date. Keep out of the reach of children."

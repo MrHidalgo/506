@@ -72,11 +72,13 @@ gulp.task(command.watch, function() {
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
-            baseDir: "./dist/"
+            baseDir: "./dist/",
+            directory: true
         },
         online      : true,
         notify      : true,
         port        : 1234,
+        logLevel    : "debug",
         logPrefix   : 'FrontEnd Server'
     });
 });

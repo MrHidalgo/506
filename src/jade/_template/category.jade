@@ -31,7 +31,7 @@
             .category__row
                 -for(var i = 0; i < categoryArr.length; i++)
                     a(
-                        href="javascript:void(0);"
+                        href!="javascript:void(0);"
                         title= categoryArr[i]
                         class= (i !== categoryArr.length - 1) ? "category__btn" : "category__btn category__btn_hide"
                     )!= categoryArr[i]

@@ -1,0 +1,64 @@
+mixin descriptionBtn(descriptionName)
+    a(
+        href="javascript:void(0);"
+        title!=descriptionName
+        class="description__btn btn-description-js"
+    )
+        span(
+            class="description__btn-text"
+            data-id!= descriptionName
+        )!= descriptionName
+        i.description__btn-icon
+
+.row.clearfix
+    .row_left
+        img(
+            src="./image/img-product.png"
+            title=""
+            alt=""
+            class="description__img"
+        )
+    .row_right
+
+        include flash-short
+
+        .description__block
+            +descriptionBtn("Short description")
+            .description__drop
+                include _macros/_description/short-desciption
+
+        .description__block.description__block_bottom
+            +descriptionBtn("Package")
+            .description__drop
+                include _macros/_description/package
+
+        .main__title-wrap.clearfix
+            +mainTitle("main__title_left", "Choose Dosage")
+
+        .main__title-wrap.clearfix
+            +mainTitle("main__title_left", "Choose Quantity")
+
+        .description__block
+            +descriptionBtn("General Info")
+            .description__drop
+                include _macros/_description/general-info
+
+        .description__block
+            +descriptionBtn("Safety Information")
+            .description__drop
+                include _macros/_description/safety-information
+
+        .description__block
+            +descriptionBtn("F.A.Q.")
+            .description__drop
+                include _macros/_description/faq
+
+        .description__block
+            +descriptionBtn("Shipping Options")
+            .description__drop
+                include _macros/_description/shipping-options
+
+        .description__block.description__block_bottom
+            +descriptionBtn("Review")
+            .description__drop
+                include _macros/_description/review

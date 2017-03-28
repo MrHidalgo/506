@@ -1,0 +1,41 @@
+-
+    var shortDescriptionList = [
+        "headache",
+        "diarrhea",
+        "nasal congestion",
+        "itching or a rash",
+        "vision problems",
+        "flushing",
+        "chest pain",
+        "swelling of the ankles or legs",
+        "shortness of breath",
+        "priapism",
+        "nausea",
+        "allergic reactions (e.g., urticaria, breathing difficulties, rash, and eruption)"
+    ];
+    var shortDescription = "Do not take Viagra if you are allergic to any of Viagra’s components.</br>" +
+        "Do not take Viagra if you are also using organic nitrates, nitrate drugs for chest pain or heart condition " +
+        "(e.g., nitroglycerin, isosorbide dinitrate and isosorbide mononitrate), nitrates as amyl nitrate or nitrite (\"poppers\").</br>" +
+        "Do not take Viagra if you take other medications to treat erectile dysfunction or pulmonary arterial hypertension, such as riociguat (Adempas).</br>" +
+        "Do not take Viagra if you are taking erythromycin, alpha-blockers, ketoconazole, itraconazole (Sporanox or Nizoral), ritonavir (Norvir) or indinavir (Crixivan).</br>" +
+        "Do not consume alcohol while using Viagra, as it can lower your blood pressure, causing dizziness and rapid heart rate (tachycardia).</br>" +
+        "Do not drive or operate machinery while taking the medication.</br>" +
+        "Contact you doctor or health care professional right away if your erection lasts longer than 4 hours or if it becomes painful.</br>" +
+        "Viagra does not protect you or your partner from sexually transmitted diseases or pregnancy.</br>" +
+        "Viagra can be dangerous for children and women.";
+
+
+p.description-short__title!= "SIDE EFFECTS"
+p.description-short__text!= "The most common side effects associated with Viagra are:"
+ul.description-short__list
+    -for(var i = 0; i < shortDescriptionList.length; i++)
+        li.description-short__list-item
+            a(
+                href="javascript:void(0);"
+                title=shortDescriptionList[i]
+                class="description-short__btn"
+            )!= shortDescriptionList[i]
+p.description-short__text!= "Side effect occurrence does not only depend on medication you are taking, but also on your overall health and other factors."
+
+p.description-short__title!= "CONTRAINDICATIONS"
+p.description-short__text!= shortDescription

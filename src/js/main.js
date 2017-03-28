@@ -69,11 +69,11 @@ $(window).on("load resize ready scroll", function(){
         $(".letter__wrap").removeClass("clearfix");
     }
 
-    // packs
+    var productContainer = $(".row_list > .product");
     if(windowWidth < '768') {
-        $(".product_pack").removeClass("product_grid").addClass("product_list");
+        productContainer.removeClass("product_grid").addClass("product_list");
     } else {
-        $(".product_pack").addClass("product_grid").removeClass("product_list");
+        productContainer.addClass("product_grid").removeClass("product_list");
     }
 })
 
@@ -287,11 +287,11 @@ $(document).ready(function(){
         self.addClass("active");
 
         if(btnAttr === "0") {
-            $(".row_best").show();
+            $(".row_mobileCategories-js").show();
             $(".categories").hide();
             $(".categories__box:first-child").addClass("active");
         } else {
-            $(".row_best").hide();
+            $(".row_mobileCategories-js").hide();
             $(".categories").show();
         }
     });
@@ -316,5 +316,19 @@ $(document).ready(function(){
         $(this).addClass("active");
 
         $(".product").attr("class", "product clearfix").addClass("product_" + btnAttr);
+    });
+
+
+    /* DESCRIPTION */
+    $(".btn-description-js").on("click", function(){
+        var self                = $(this),
+            descriptionBlock    = self.closest(".description__block");
+
+        if(descriptionBlock.hasClass("active")) {
+            self.closest(".description__block").removeClass("active");
+        } else {
+            $(".description__block").removeClass("active");
+            self.closest(".description__block").addClass("active");
+        }
     });
 });

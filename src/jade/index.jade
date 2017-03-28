@@ -19,6 +19,7 @@ html(
         include _template/header
         include _template/category
 
+
         .body__row
             .container
 
@@ -32,9 +33,12 @@ html(
                     +mainTitle("main__title_category btn-prod-js active", "Best Selling", "0")
                     +mainTitle("main__title_category btn-prod-js", "Categories", "1")
 
-                .row_shadow.row_best
+                // class [row_nowrap]       - for horizontal scroll product in medium device
+                // class [row_shadow]       - for horizontal scroll product gradient right
+                // class [row_mediumMax, row_medium]    - for horizontal scroll in medium, mediumMax, small device
+                .row_shadow.row_nowrap.row_mediumMax.row_mobileCategories-js
                     // class for modify product position: [product_grid, product_list, product_gallery]
-                    .product.product_grid.product_best.clearfix
+                    .product.product_grid.clearfix
                         +productBox(6, false, false)
 
                 include ./_template/categories
@@ -43,9 +47,10 @@ html(
                     +mainTitle("main__title_left", "ED Packs")
                     +btnViewAll("btn__view_right")
 
-                .row_shadow
+                // class [row_list] - for transform block in small device (removeClass("product_grid").addClass("product_list"))
+                .row_shadow.row_nowrap.row_medium.row_list
                     // class for modify product position: [product_grid, product_list, product_gallery]
-                    .product.product_grid.product_pack.clearfix
+                    .product.product_grid.clearfix
                         +productBox(6, true, false)
 
                 include ./_template/flash
@@ -76,9 +81,6 @@ html(
 
         include _template/modal__coupon
         include _template/slide-letter
-
-        //- BREADCRUMBS
-        //include _template/breadcrumbs
 
         div(class="lang__btn", style="text-align:center; padding-top:50px; padding-bottom:15px; position:relative; z-index;100;")
             a(

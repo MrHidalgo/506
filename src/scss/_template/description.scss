@@ -1,0 +1,142 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN
+///
+.description {
+	&__block {
+		border-top: 1px solid $c-whisper;
+		//border-bottom: 1px solid $c-whisper;
+
+
+		&:first-child {
+			border-top: none;
+		}
+
+
+		&_bottom {
+			border-bottom: 1px solid $c-whisper;
+
+
+			.description__drop {
+				//border-top: none;
+			}
+		}
+
+
+		&.active {
+			.description__btn {
+				color: $c-black;
+
+
+				&-icon {
+					right: 1px;
+					@include retina-sprite($sp-i-letter-close-group);
+				}
+			}
+			.description__drop {
+				display: block;
+			}
+		}
+	}
+
+
+	&__drop {
+		display: none;
+		border-top: 1px solid $c-whisper;
+		padding: 15px;
+	}
+
+
+	&__img {
+		margin-top: 60px;
+	}
+
+
+	&__btn {
+		display: block;
+		position: relative;
+		font: {
+			family: $f-RW-medium;
+		};
+		color: $c-radical-red;
+		height: 44px;
+		line-height: 44px;
+
+
+		&-icon {
+			position: absolute;
+			top: 17px;
+			right: 0;
+			@include retina-sprite($sp-i-letter-open-group);
+		}
+	}
+
+
+	// SHORT
+	&-short {
+		&__btn,
+		&__text {
+			font-size: 12px;
+		}
+
+
+		&__title {
+			font: {
+				size: 14px;
+				family: $f-R-bold;
+			}
+			margin: {
+				top: 10px;
+				bottom: 5px;
+			};
+
+			> .description-short__text,
+			> .description-short__btn {
+				font-size: 14px;
+				font-family: $f-R-regular;
+			}
+		}
+
+
+		&__btn {
+			color: $c-navy-blue;
+			text-decoration: underline;
+		}
+
+
+		&__text {
+			margin-bottom: 5px;
+			line-height: 1.6;
+
+
+			&_data {
+				color: $c-grey-suit;
+				margin-left: 30px;
+			}
+
+
+			&_bold {
+				font-family: $f-R-bold;
+				margin: {
+					bottom: 0;
+				}
+				padding-top: 5px;
+			}
+		}
+
+
+		&__list {
+			margin-bottom: 10px;
+		}
+
+
+		&__free {
+			color: $c-radical-red;
+		}
+	}
+}

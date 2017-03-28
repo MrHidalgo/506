@@ -14,24 +14,31 @@ html(
     // open-menu open-popup cart_fill
     body(class="cart_fill")
 
-        include _template/menu
-        include _template/header
-        include _template/category
 
-        .body__row.body__row-category
+        //include _template/menu
+        //include _template/header
+        //include _template/category
+
+
+        .body__row
             .container
+
 
                 include _template/breadcrumbs
 
-                .main__title-wrap.main__title-wrap--hide.clearfix
-                    +mainTitle("main__title_left", "Cialis Super Active (Tadalafil)")
+
+                .main__title-wrap.clearfix
+                    +mainTitle("main__title_left", "Maximum Potency Testosterone Booster (cialis)")
+
+                    // class [rating_four, rating_five]
+                    .rating.rating_four
+                        i.rating__icon
 
 
+                include ./_template/description
 
-                include ./_template/flash
 
-
-                .bottom-info.clearfix
+                //.bottom-info.clearfix
                     .bottom-info_right
                         include ./_template/go-top
                     .bottom-info_centered
@@ -40,12 +47,12 @@ html(
                         include ./_template/certificate
 
 
-        include ./_template/footer
+        //include ./_template/footer
 
-        include ./_template/bottom-certificate
+        //include ./_template/bottom-certificate
 
-        include _template/modal__coupon
-        include _template/slide-letter
+        //include _template/modal__coupon
+        //include _template/slide-letter
 
         div(class="lang__btn", style="text-align:center; padding-top:50px; padding-bottom:15px; position:relative; z-index;100;")
             a(

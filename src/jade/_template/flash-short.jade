@@ -1,0 +1,26 @@
+
+.flash.flash_short.clearfix
+        div(
+            class!="flash__block"
+        )
+            .flash__header.clearfix
+                p(class="flash__title")
+                    i.flash__title-icon
+                    span(data-id="Flash Sale!")!= "Flash Sale!"
+
+                p(class="flash__title-sale")
+                    i.flash__title-sale-icon
+                    span(data-id="75% OFF")!= "75% OFF"
+
+                span.flash__header-line
+
+            .flash__footer.clearfix
+                p.flash__end!= "Flash Sale ends 11/22/2017"
+
+                .flash__timer
+                    span.flash__timer-hourse!= "00"
+                    | &nbsp;:&nbsp;
+                    span.flash__timer-minute!= "15"
+                    | &nbsp;:&nbsp;
+                    span.flash__timer-second!= "55"
+

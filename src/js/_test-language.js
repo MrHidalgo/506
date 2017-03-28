@@ -63,7 +63,24 @@ var lang = {
         "Shop" : "Shop",
         "Help Me" : "Help Me",
 
-        "Certified Pharmacy" : "Certified Pharmacy"
+        "Certified Pharmacy" : "Certified Pharmacy",
+
+        "We are never closed!" : "We are never closed!",
+        "Change Country & Currency" : "Change Country & Currency",
+        "SHOW MORE PRODUCTS" : "SHOW MORE PRODUCTS",
+        "SELECT PACK" : "SELECT PACK",
+        "Grid" : "Grid",
+        "List" : "List",
+        "Gallery" : "Gallery",
+
+        "Short description" : "Short description",
+        "Package" : "Package",
+        "Choose Dosage" : "Choose Dosage",
+        "Choose Quantity" : "Choose Quantity",
+        "General Info" : "General Info",
+        "Safety Information" : "Safety Information",
+        "Shipping Options" : "Shipping Options",
+        "Review" : "Review"
     } ,
     de : {
         "Apply Coupon" : "Bewerben Coupon",
@@ -129,7 +146,24 @@ var lang = {
         "Shop" : "Geschäft",
         "Help Me" : "Hilf mir",
 
-        "Certified Pharmacy" : "Zertifizierte Apotheke"
+        "Certified Pharmacy" : "Zertifizierte Apotheke",
+
+        "We are never closed!" : "Wir sind nie geschlossen!",
+        "Change Country & Currency" : "Land & Währung ändern",
+        "SHOW MORE PRODUCTS" : "ZEIGEN SIE MEHR PRODUKTE",
+        "SELECT PACK" : "SELECT PACK",
+        "Grid" : "Gitter",
+        "List" : "Liste",
+        "Gallery" : "Galerie",
+
+        "Short description" : "Kurze Beschreibung",
+        "Package" : "Paket",
+        "Choose Dosage" : "Wählen Sie Dosierung",
+        "Choose Quantity" : "Wählen Sie Menge",
+        "General Info" : "Allgemeine Information",
+        "Safety Information" : "Sicherheitsinformation",
+        "Shipping Options" : "Versandoptionen",
+        "Review" : "Überprüfung"
     },
     fr : {
         "Apply Coupon": "Appliquer Coupon",
@@ -195,7 +229,24 @@ var lang = {
         "Shop" : "Boutique",
         "Help Me" : "Aidez moi",
 
-        "Certified Pharmacy" : "Pharmacie certifié"
+        "Certified Pharmacy" : "Pharmacie certifié",
+
+        "We are never closed!" : "Nous ne sommes jamais fermés!",
+        "Change Country & Currency" : "Changer le pays et la devise",
+        "SHOW MORE PRODUCTS" : "VOIR PLUS PRODUITS",
+        "SELECT PACK" : "SELECT PACK",
+        "Grid" : "la grille",
+        "List" : "liste",
+        "Gallery" : "Galerie",
+
+        "Short description" : "Brève description",
+        "Package" : "Paquet",
+        "Choose Dosage" : "Choisissez le dosage",
+        "Choose Quantity" : "Choisir une quantité",
+        "General Info" : "Informations générales",
+        "Safety Information" : "Information de sécurité",
+        "Shipping Options" : "Les options d'expédition",
+        "Review" : "La revue"
     },
     it : {
         "Apply Coupon" : "Applicare Coupon",
@@ -261,7 +312,24 @@ var lang = {
         "Shop" : "Negozio",
         "Help Me" : "Aiutami",
 
-        "Certified Pharmacy" : "Farmacia certificata"
+        "Certified Pharmacy" : "Farmacia certificata",
+
+        "We are never closed!" : "Noi non sono mai chiuse!",
+        "Change Country & Currency" : "Modifica paese e valuta",
+        "SHOW MORE PRODUCTS" : "Mostra altro PRODOTTI",
+        "SELECT PACK" : "PACK SELEZIONA",
+        "Grid" : "Griglia",
+        "List" : "Elenco",
+        "Gallery" : "Galleria",
+
+        "Short description" : "Breve descrizione",
+        "Package" : "Pacchetto",
+        "Choose Dosage" : "Scegli Dosaggio",
+        "Choose Quantity" : "Scegli il numero dei",
+        "General Info" : "Informazioni generali",
+        "Safety Information" : "Informazioni sulla sicurezza",
+        "Shipping Options" : "Opzioni di spedizione",
+        "Review" : "Revisione"
     },
     es : {
         "Apply Coupon" : "Aplicar Cupón",
@@ -327,7 +395,24 @@ var lang = {
         "Shop" : "Tienda",
         "Help Me" : "Ayuadame",
 
-        "Certified Pharmacy" : "Farmacia certificada"
+        "Certified Pharmacy" : "Farmacia certificada",
+
+        "We are never closed!" : "¡Nunca estamos cerrados!",
+        "Change Country & Currency" : "Cambiar País y Moneda",
+        "SHOW MORE PRODUCTS" : "MOSTRAR MÁS PRODUCTOS",
+        "SELECT PACK" : "SELECCIONAR PACK",
+        "Grid" : "Cuadrícula",
+        "List" : "Lista",
+        "Gallery" : "Galería",
+
+        "Short description" : "Breve descripción",
+        "Package" : "Paquete",
+        "Choose Dosage" : "Elija Dosis",
+        "Choose Quantity" : "Elegir Cantidad",
+        "General Info" : "Información general",
+        "Safety Information" : "Información de seguridad",
+        "Shipping Options" : "Opciones de envío",
+        "Review" : "revisión"
     },
     pt : {
         "Apply Coupon" : "Aplicar Cupom",
@@ -393,7 +478,24 @@ var lang = {
         "Shop" : "Fazer compras",
         "Help Me" : "Ajude-me",
 
-        "Certified Pharmacy" : "Farmácia certificado"
+        "Certified Pharmacy" : "Farmácia certificado",
+
+        "We are never closed!" : "Nunca estamos fechados!",
+        "Change Country & Currency" : "Alterar país e moeda",
+        "SHOW MORE PRODUCTS" : "MOSTRAR MAIS PRODUTOS",
+        "SELECT PACK" : "SELECIONE PACK",
+        "Grid" : "Grade",
+        "List" : "Lista",
+        "Gallery" : "Galeria",
+
+        "Short description" : "Pequena descrição",
+        "Package" : "Pacote",
+        "Choose Dosage" : "Escolher Dosagem",
+        "Choose Quantity" : "Escolha Quantidade",
+        "General Info" : "Informações gerais",
+        "Safety Information" : "Informação de Segurança",
+        "Shipping Options" : "Opções de envio",
+        "Review" : "Reveja"
     },
     jp : {
         "Apply Coupon" : "クーポンを適用",
@@ -459,6 +561,23 @@ var lang = {
         "Shop" : "ショップ",
         "Help Me" : "助けて",
 
-        "Certified Pharmacy" : "認定薬局"
+        "Certified Pharmacy" : "認定薬局",
+
+        "We are never closed!" : "私たちは決して閉じられません！",
+        "Change Country & Currency" : "国と通貨の変更",
+        "SHOW MORE PRODUCTS" : "もっと見る",
+        "SELECT PACK" : "セレクトパック",
+        "Grid" : "グリッド",
+        "List" : "リスト",
+        "Gallery" : "ギャラリー",
+
+        "Short description" : "簡単な説明",
+        "Package" : "パッケージ",
+        "Choose Dosage" : "投薬量を選択",
+        "Choose Quantity" : "数量を選択",
+        "General Info" : "一般的な情報",
+        "Safety Information" : "安全情報",
+        "Shipping Options" : "配送オプション",
+        "Review" : "レビュー"
     }
 };

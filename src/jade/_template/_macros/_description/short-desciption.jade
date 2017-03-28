@@ -1,0 +1,78 @@
+-
+    var shortDescription = "Viagra is one of the best-known treatments for erectile dysfunction (ED). ED is caused by insufficient blood flow to the penis, resulting in the inability to maintain an erection. Viagra can dramatically enhance the quality of an erection by increasing blood flow to the penis. Its effect lasts for 4-6 hours. Viagra is widely known to treat PAH (pulmonary arterial hypertension).";
+    var shortDescriptionOther = [
+        "Viagra®",
+        "Viagra Super Active",
+        "Viagra Soft",
+        "Novosil® Oral Strips",
+        "Viagra Oral Strips",
+        "Viagra Oral Jelly",
+        "Viagra Professional",
+        "Viagra Plus",
+        "Revatio",
+        "Penegra",
+        "Silagra",
+        "Sildigra",
+        "Kamagra® Effervescent",
+        "Kamagra Gold",
+        "Zenegra",
+        "Hard On®",
+        "Hardon Xpower®",
+        "Kamagra®",
+        "Suhagra",
+        "Caverta",
+        "Hardon XPower®",
+        "Intagra®",
+        "Veega",
+        "Sildenafila",
+        "Sildenafilo",
+        "Sildenafilum"
+    ];
+
+
+p.description-short__text!= shortDescription
+a(
+    href="javascript:void(0);"
+    title="Show full description"
+    class="description-short__btn"
+)!= "Show full description"
+
+p.description-short__title!= "ACTIVE INGREDIENTS"
+a(
+    href="javascript:void(0);"
+    title="Sildenafil Citrate"
+    class="description-short__btn"
+)!= "Sildenafil Citrate"
+
+p.description-short__title!= "OTHER NAMES FOR THIS MEDICATION"
+-for(var i = 0; i < shortDescriptionOther.length; i++)
+    a(
+        href="javascript:void(0);"
+        title=shortDescriptionOther[i]
+        class="description-short__btn"
+    )!= shortDescriptionOther[i]
+
+    if(i !== shortDescriptionOther.length - 1)
+        | &nbsp;,&nbsp;
+
+p.description-short__title!= "SIMILAR PRODUCTS"
+-for(var j = 0; j < shortDescriptionOther.length; j++)
+    a(
+        href="javascript:void(0);"
+        title=shortDescriptionOther[j]
+        class="description-short__btn"
+    )!= shortDescriptionOther[j]
+
+    if(j !== shortDescriptionOther.length - 1)
+        | &nbsp;,&nbsp;
+
+p.description-short__title!= "INGREDIENTS"
+-for(var k = 0; k < shortDescriptionOther.length; k++)
+    a(
+        href="javascript:void(0);"
+        title=shortDescriptionOther[k]
+        class="description-short__btn"
+    )!= shortDescriptionOther[k]
+
+    if(k !== shortDescriptionOther.length - 1)
+        | &nbsp;,&nbsp;

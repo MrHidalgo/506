@@ -27,6 +27,12 @@
 		background-color: $c-black;
 		text-align: left;
 
+		.flash_short & {
+			width: $w-all;
+			min-height: 90px;
+			background-color: $c-white-smoke;
+		}
+
 
 		&_left,
 		&_right {
@@ -123,6 +129,10 @@
 	&__header {
 		position: relative;
 		height: 44px;
+
+		.flash_short & {
+			background-color: $c-black;
+		}
 
 
 		&-line {
@@ -261,6 +271,13 @@
 			top: 10px;
 			bottom: 15px;
 		}
+
+
+		.flash_short & {
+			padding: 0 15px;
+			height: 45px;
+			line-height: 45px;
+		}
 	}
 
 
@@ -271,10 +288,26 @@
 		margin-right: -5px;
 	}
 
+
 	&__timer {
 		width: 150px;
 		color: $c-white;
 		font-size: 14px;
 		text-align: center;
+
+
+		.flash_short & {
+			float: right;
+			width: auto;
+			margin-right: 0;
+			color: $c-radical-red;
+		}
+	}
+
+
+	&__end {
+		float: left;
+		font-size: 14px;
+		color: $c-grey-suit;
 	}
 }
