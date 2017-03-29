@@ -116,6 +116,29 @@
 	}
 
 
+	&__quantity {
+		display: block;
+		width: 215px;
+		height: 45px;
+		line-height: 45px;
+	}
+
+
+	// ICON
+	&__icon {
+		display: inline-block;  *display: inline;  *zoom: 1;
+		vertical-align: middle;
+
+
+		.btn__quantity & {
+			margin-right: 10px;
+			@include retina-sprite($sp-i-btn-add-cart-group);
+		}
+	}
+	// TEXT
+	&__text {
+		vertical-align: middle;
+	}
 	// BTN VIEW ALL
 	&__view {
 		position: relative;

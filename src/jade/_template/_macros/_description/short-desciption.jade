@@ -37,14 +37,14 @@ a(
     class="description-short__btn"
 )!= "Show full description"
 
-p.description-short__title!= "ACTIVE INGREDIENTS"
+p.description-short__title!= "Active ingredients"
 a(
     href="javascript:void(0);"
     title="Sildenafil Citrate"
     class="description-short__btn"
 )!= "Sildenafil Citrate"
 
-p.description-short__title!= "OTHER NAMES FOR THIS MEDICATION"
+p.description-short__title!= "Other names for this medication"
 -for(var i = 0; i < shortDescriptionOther.length; i++)
     a(
         href="javascript:void(0);"
@@ -55,7 +55,7 @@ p.description-short__title!= "OTHER NAMES FOR THIS MEDICATION"
     if(i !== shortDescriptionOther.length - 1)
         | &nbsp;,&nbsp;
 
-p.description-short__title!= "SIMILAR PRODUCTS"
+p.description-short__title!= "Similar products"
 -for(var j = 0; j < shortDescriptionOther.length; j++)
     a(
         href="javascript:void(0);"
@@ -66,7 +66,7 @@ p.description-short__title!= "SIMILAR PRODUCTS"
     if(j !== shortDescriptionOther.length - 1)
         | &nbsp;,&nbsp;
 
-p.description-short__title!= "INGREDIENTS"
+p.description-short__title!= "Ingredients"
 -for(var k = 0; k < shortDescriptionOther.length; k++)
     a(
         href="javascript:void(0);"

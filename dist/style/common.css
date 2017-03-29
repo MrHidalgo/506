@@ -596,7 +596,7 @@ input[type="radio"] {
   
   .menu__btn:active .menu__btn-icon {
     background-image: url(../image/sprite.png);
-    background-position: -16px -319px;
+    background-position: -31px -319px;
     width: 10px;
     height: 17px;
   }
@@ -689,7 +689,7 @@ input[type="radio"] {
     top: 16px;
     right: 0;
     background-image: url(../image/sprite.png);
-    background-position: -31px -319px;
+    background-position: -16px -319px;
     width: 10px;
     height: 17px;
   }
@@ -1321,7 +1321,7 @@ input[type="radio"] {
   margin-top: 9px;
   margin-left: 9px;
   background-image: url(../image/sprite.png);
-  background-position: -246px -273px;
+  background-position: -233px -273px;
   width: 12px;
   height: 12px;
 }
@@ -1573,7 +1573,7 @@ input.search__input::placeholder {
   display: inline-block;
   margin-top: 17px;
   background-image: url(../image/sprite.png);
-  background-position: -280px -273px;
+  background-position: -250px -273px;
   width: 12px;
   height: 12px;
 }
@@ -1591,7 +1591,7 @@ input.search__input::placeholder {
   
   .letter__btn-icon {
     background-image: url(../image/sprite.png);
-    background-position: -82px -299px;
+    background-position: -121px -299px;
     width: 8px;
     height: 13px;
   }
@@ -1814,7 +1814,7 @@ input.search__input::placeholder {
 .cart:hover .cart__icon {
   top: 15px;
   background-image: url(../image/sprite.png);
-  background-position: -166px -273px;
+  background-position: -187px -273px;
   width: 18px;
   height: 12px;
   -webkit-animation: slideInLeft .1s linear;
@@ -1841,7 +1841,7 @@ input.search__input::placeholder {
   left: 17px;
   top: 13px;
   background-image: url(../image/sprite.png);
-  background-position: -125px -273px;
+  background-position: -146px -273px;
   width: 16px;
   height: 16px;
 }
@@ -2194,7 +2194,7 @@ input.search__input::placeholder {
 
 .active .category__btn-main-icon {
   background-image: url(../image/sprite.png);
-  background-position: -297px -273px;
+  background-position: -318px -273px;
   width: 13px;
   height: 8px;
 }
@@ -2327,7 +2327,7 @@ input.search__input::placeholder {
     top: 17px;
     right: 0;
     background-image: url(../image/sprite.png);
-    background-position: -82px -299px;
+    background-position: -121px -299px;
     width: 8px;
     height: 13px;
   }
@@ -2880,7 +2880,7 @@ input.search__input::placeholder {
 .slider__free-icon-0 {
   left: -12px;
   background-image: url(../image/sprite.png);
-  background-position: -336px -233px;
+  background-position: -319px -233px;
   width: 12px;
   height: 28px;
 }
@@ -2898,7 +2898,7 @@ input.search__input::placeholder {
 .slider__free-icon-1 {
   right: -12px;
   background-image: url(../image/sprite.png);
-  background-position: -319px -233px;
+  background-position: -336px -233px;
   width: 12px;
   height: 28px;
 }
@@ -3793,7 +3793,7 @@ input.search__input::placeholder {
   top: 17px;
   right: 0;
   background-image: url(../image/sprite.png);
-  background-position: -280px -273px;
+  background-position: -250px -273px;
   width: 12px;
   height: 12px;
 }
@@ -3809,15 +3809,15 @@ input.search__input::placeholder {
 
 
 .description-short__btn, .description-short__text {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 
 .description-short__title {
-  font-size: 14px;
-  font-family: "roboto-bold";
-  margin-top: 10px;
-  margin-bottom: 5px;
+  font-size: 20px;
+  font-family: "raleway-heavy";
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 
@@ -3825,6 +3825,12 @@ input.search__input::placeholder {
 .description-short__title > .description-short__btn {
   font-size: 14px;
   font-family: "roboto-regular";
+}
+
+
+.description-short__title_package {
+  font-size: 14px;
+  font-family: "roboto-bold";
 }
 
 
@@ -3854,12 +3860,211 @@ input.search__input::placeholder {
 
 
 .description-short__list {
+  padding-left: 15px;
   margin-bottom: 10px;
 }
 
 
 .description-short__free {
   color: #FF2D55;
+  vertical-align: middle;
+}
+
+
+.dosage {
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.dosage__box {
+  float: left;
+  padding: 2px;
+  margin-right: 5px;
+  width: 68px;
+  height: 48px;
+  line-height: 44px;
+}
+
+
+.dosage__box.active {
+  line-height: 42px;
+  background-color: #FFF;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+
+.dosage__box.active .dosage__wrap {
+  border: 2px solid #FF2D55;
+  width: 64px;
+  height: 44px;
+}
+
+
+.dosage__wrap {
+  border: 1px solid #000;
+  width: 66px;
+  height: 46px;
+}
+
+
+.dosage__num {
+  font-size: 14px;
+  color: #191919;
+  text-align: center;
+}
+
+
+.quantity_left {
+  float: left;
+  width: 240px;
+}
+
+
+.quantity_right {
+  float: right;
+  width: 215px;
+  padding-top: 3px;
+}
+
+
+.quantity_center {
+  float: left;
+  width: 205px;
+}
+
+
+.quantity_left, .quantity_right, .quantity_center {
+  height: 100%;
+}
+
+
+.quantity__box {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #E7E7E7;
+}
+
+
+.quantity__box:first-child {
+  border-top: none;
+}
+
+
+.quantity__box_last {
+  border-bottom: 1px solid #E7E7E7;
+}
+
+
+.quantity__pills {
+  font-size: 20px;
+  font-family: "roboto-medium";
+}
+
+
+.quantity__pills_mg {
+  color: #8E8E93;
+}
+
+
+.quantity__perPill {
+  color: #8E8E93;
+}
+
+
+.quantity__perPill_margin {
+  margin-bottom: 10px;
+}
+
+
+.quantity__perPill_price {
+  color: #000;
+}
+
+
+.quantity__perPill_bonus {
+  color: #FF2D55;
+  font-family: "roboto-bold";
+}
+
+
+.quantity__package {
+  font-size: 14px;
+}
+
+
+.quantity__package-free .quantity__package_name {
+  font-family: "roboto-bold";
+}
+
+
+.quantity__package_free {
+  color: #FF2D55;
+}
+
+
+.quantity__package_pills {
+  float: right;
+  color: #8E8E93;
+}
+
+
+.quantity__free {
+  float: left;
+  margin-top: 5px;
+  margin-left: 20px;
+  font-size: 14px;
+  color: #FF2D55;
+}
+
+
+.quantity__free_next {
+  padding-left: 7px;
+}
+
+
+.quantity__price {
+  float: right;
+  margin-top: 10px;
+  margin-right: 20px;
+  font-size: 20px;
+  font-family: "roboto-medium";
+}
+
+
+.quantity__title {
+  font-size: 14px;
+  color: #8E8E93;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+
+.quantity__delivery {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+
+.quantity__delivery-name {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  font-family: "roboto-bold";
+  min-width: 50px;
+}
+
+
+.quantity__delivery-data {
+  padding-left: 10px;
+}
+
+
+.quantity__delivery-price {
+  float: right;
+  color: #191919;
 }
 
 
@@ -3927,7 +4132,7 @@ input.search__input::placeholder {
   right: 0;
   top: 17px;
   background-image: url(../image/sprite.png);
-  background-position: -280px -273px;
+  background-position: -250px -273px;
   width: 12px;
   height: 12px;
 }
@@ -4140,7 +4345,7 @@ input.search__input::placeholder {
   left: -12px;
   top: 0;
   background-image: url(../image/sprite.png);
-  background-position: -336px -233px;
+  background-position: -319px -233px;
   width: 12px;
   height: 28px;
 }
@@ -4537,7 +4742,7 @@ input.search__input::placeholder {
   top: 16px;
   right: 0;
   background-image: url(../image/sprite.png);
-  background-position: -95px -299px;
+  background-position: -69px -299px;
   width: 8px;
   height: 13px;
 }
@@ -4627,7 +4832,7 @@ input.search__input::placeholder {
     vertical-align: middle;
     margin-left: 10px;
     background-image: url(../image/sprite.png);
-    background-position: -224px -255px;
+    background-position: -242px -255px;
     width: 13px;
     height: 8px;
   }
@@ -4768,7 +4973,7 @@ input.search__input::placeholder {
   margin-left: 17px;
   margin-top: 7px;
   background-image: url(../image/sprite.png);
-  background-position: -69px -299px;
+  background-position: -108px -299px;
   width: 8px;
   height: 13px;
 }
@@ -5048,7 +5253,7 @@ input.search__input::placeholder {
 
 .active .currency__icon {
   background-image: url(../image/sprite.png);
-  background-position: -242px -255px;
+  background-position: -224px -255px;
   width: 13px;
   height: 8px;
 }
@@ -5105,7 +5310,7 @@ input.search__input::placeholder {
 
 .language__icon_left {
   background-image: url(../image/sprite.png);
-  background-position: -146px -273px;
+  background-position: -167px -273px;
   width: 15px;
   height: 15px;
 }
@@ -5139,7 +5344,7 @@ input.search__input::placeholder {
 
 .active .language__icon_right {
   background-image: url(../image/sprite.png);
-  background-position: -242px -255px;
+  background-position: -224px -255px;
   width: 13px;
   height: 8px;
 }
@@ -5183,7 +5388,7 @@ input.search__input::placeholder {
     top: 16px;
     right: 0;
     background-image: url(../image/sprite.png);
-    background-position: -82px -299px;
+    background-position: -121px -299px;
     width: 8px;
     height: 13px;
   }
@@ -5250,7 +5455,7 @@ input.search__input::placeholder {
     top: 15px;
     right: 0;
     background-image: url(../image/sprite.png);
-    background-position: -280px -273px;
+    background-position: -250px -273px;
     width: 12px;
     height: 12px;
   }
@@ -5860,7 +6065,7 @@ input.search__input::placeholder {
     position: relative;
     top: -1px;
     background-image: url(../image/sprite.png);
-    background-position: -108px -299px;
+    background-position: -82px -299px;
     width: 8px;
     height: 13px;
   }

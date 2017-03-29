@@ -1,0 +1,163 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN
+///
+.quantity {
+
+
+	// left
+	&_left {
+		float: left;
+		width: 240px;
+	}
+	// right
+	&_right {
+		float: right;
+		width: 215px;
+		padding-top: 3px;
+	}
+	// center
+	&_center {
+		float: left;
+		width: (660px - 240 - 215);
+	}
+	// [left/right/center]
+	&_left,
+	&_right,
+	&_center {
+		height: $w-all;
+	}
+
+
+	&__box {
+		padding: {
+			top: 20px;
+			bottom: 20px;
+		};
+		border-top: 1px solid $c-whisper;
+
+
+		&:first-child {
+			border-top: none;
+		}
+
+
+		&_last {
+			border-bottom: 1px solid $c-whisper;
+		}
+	}
+
+
+	&__pills {
+		font: {
+			size: 20px;
+			family: $f-R-medium;
+		};
+
+
+		&_mg {
+			color: $c-grey-suit;
+		}
+	}
+
+
+	&__perPill {
+		color: $c-grey-suit;
+
+
+		&_margin {
+			margin-bottom: 10px;
+		}
+		&_price {
+			color: $c-black;
+		}
+		&_bonus {
+			color: $c-radical-red;
+			font-family: $f-R-bold;
+		}
+	}
+
+
+	&__package {
+		font-size: 14px;
+
+
+		&-free {
+			.quantity__package_name {
+				font-family: $f-R-bold;
+			}
+		}
+		&_free {
+			color: $c-radical-red;
+		}
+		&_name {}
+		&_pills {
+			float: right;
+			color: $c-grey-suit;
+		}
+	}
+
+
+	&__free {
+		float: left;
+		margin: {
+			top: 5px;
+			left: 20px;
+		}
+		font-size: 14px;
+		color: $c-radical-red;
+
+
+		&_next {
+			padding-left: 7px;
+		}
+	}
+
+
+	&__price {
+		float: right;
+		margin: {
+			top: 10px;
+			right: 20px;
+		}
+		font: {
+			size: 20px;
+			family: $f-R-medium;
+		};
+	}
+
+
+	&__title {
+		font-size: 14px;
+		color: $c-grey-suit;
+		margin: {
+			top: 15px;
+			bottom: 10px;
+		}
+	}
+
+
+	&__delivery {
+		font-size: 14px;
+		margin-bottom: 10px;
+
+
+		&-name {
+			display: inline-block;  *display: inline;  *zoom: 1;
+			font-family: $f-R-bold;
+			min-width: 50px;
+		}
+		&-data {
+			padding-left: 10px;
+		}
+		&-price {
+			float: right;
+			color: $c-nero;
+		}
+	}
+}

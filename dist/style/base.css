@@ -102,6 +102,45 @@
 }
 
 
+.btn__quantity {
+  display: block;
+  width: 215px;
+  height: 45px;
+  line-height: 45px;
+}
+
+
+.btn__icon {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+}
+
+
+.btn__quantity .btn__icon {
+  margin-right: 10px;
+  background-image: url(../image/sprite.png);
+  background-position: -125px -273px;
+  width: 16px;
+  height: 16px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .btn__quantity .btn__icon {
+    background-image: url(../image/sprite@2x.png);
+    -webkit-background-size: 355px 339px;
+            background-size: 355px 339px;
+  }
+}
+
+
+.btn__text {
+  vertical-align: middle;
+}
+
+
 .btn__view {
   position: relative;
   display: inline-block;
@@ -118,7 +157,7 @@
   top: 16px;
   right: 5px;
   background-image: url(../image/sprite.png);
-  background-position: -121px -299px;
+  background-position: -95px -299px;
   width: 8px;
   height: 13px;
 }
@@ -177,7 +216,7 @@
 .btn__view-all:hover .btn__view-all-icon {
   margin-top: 9px;
   background-image: url(../image/sprite.png);
-  background-position: -246px -273px;
+  background-position: -233px -273px;
   width: 12px;
   height: 12px;
 }
@@ -632,7 +671,7 @@ select {
 
 .category__view-grid .category__view-icon {
   background-image: url(../image/sprite.png);
-  background-position: -189px -273px;
+  background-position: -210px -273px;
   width: 18px;
   height: 12px;
 }
@@ -649,7 +688,7 @@ select {
 
 .category__view-grid.active .category__view-icon {
   background-image: url(../image/sprite.png);
-  background-position: -290px -158px;
+  background-position: -265px -237px;
   width: 18px;
   height: 12px;
 }
@@ -666,7 +705,7 @@ select {
 
 .category__view-list .category__view-icon {
   background-image: url(../image/sprite.png);
-  background-position: -265px -237px;
+  background-position: -290px -158px;
   width: 18px;
   height: 12px;
 }
@@ -700,7 +739,7 @@ select {
 
 .category__view-gallery .category__view-icon {
   background-image: url(../image/sprite.png);
-  background-position: -263px -273px;
+  background-position: -267px -273px;
   width: 12px;
   height: 12px;
 }
@@ -717,7 +756,7 @@ select {
 
 .category__view-gallery.active .category__view-icon {
   background-image: url(../image/sprite.png);
-  background-position: -212px -273px;
+  background-position: -301px -273px;
   width: 12px;
   height: 12px;
 }

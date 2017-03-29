@@ -6,6 +6,17 @@ mixin btn(className, text)
         data-id= text
         class="btn " + className
     )!= text
+mixin btnIcon(className, text)
+    a(
+        href="javascript:void(0);"
+        title=""
+        class="btn " + className
+    )
+        i.btn__icon
+        span(
+            class="btn__text"
+            data-id= text
+        )!= text
 
 
 //- MAIN TITLE

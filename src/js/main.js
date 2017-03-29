@@ -91,11 +91,12 @@ $(document).ready(function(){
 
     /* BODY CLICK */
     $('body').on('click', function (e) {
-        var className = ".currency, .language";
+        var className = ".currency, .language, .btn-category-js, .category__drop";
 
         if (!$(e.target).closest(className).length) {
             $(".currency__btn, .language__btn").removeClass("active");
             $(".drop__down").fadeOut(300);
+            categoryBtnRemove();
         }
 
         // for menu mobile
@@ -209,18 +210,13 @@ $(document).ready(function(){
 
 
     /* CATEGORY */
-    $(".btn-category-js, .category__drop").hover(function(){
-        categoryBtnToggle();
-    });
-    $(".btn-category-js").on("click", function(){
-        if(!$(window).width() > '1024') {
-            if($(this).hasClass("active")) {
-                categoryBtnRemove();
-            } else {
-                categoryBtnToggle();
-            }
+    $(".btn-category-js, .category__drop").on("click", function () {
+        if($(".btn-category-js").hasClass("active")) {
+            categoryBtnToggle();
+        } else {
+            categoryBtnToggle();
         }
-    })
+    });
 
 
     /* TABS */
@@ -330,5 +326,12 @@ $(document).ready(function(){
             $(".description__block").removeClass("active");
             self.closest(".description__block").addClass("active");
         }
+    });
+
+
+    /* DOSAGE */
+    $(".btn-dosage-js").on('click', function(){
+        $(".btn-dosage-js").removeClass("active");
+        $(this).addClass("active");
     });
 });

@@ -1,0 +1,51 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN
+///
+.dosage {
+	cursor: pointer;
+	margin: {
+		top: 20px;
+		bottom: 20px;
+	}
+
+
+	&__box {
+		float: left;
+		padding: 2px;
+		margin-right: 5px;
+		@include mixinDimensions((66px + 2), (46px + 2));
+		line-height: (46px - 2);
+
+
+		&.active {
+			line-height: (46px - 4);
+			background-color: $c-white;
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.15);
+
+
+			.dosage__wrap {
+				border: 2px solid $c-radical-red;
+				@include mixinDimensions((66px - 2), (46px - 2));
+			}
+		}
+	}
+
+
+	&__wrap {
+		border: 1px solid $c-black;
+		@include mixinDimensions(66px, 46px);
+	}
+
+
+	&__num {
+		font-size: 14px;
+		color: $c-nero;
+		text-align: center;
+	}
+}

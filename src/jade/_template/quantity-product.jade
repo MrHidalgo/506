@@ -1,0 +1,35 @@
+
+.quantity
+    -for(var i = 0; i < 8; i++)
+        div(
+            class!= (i !== 7) ? "quantity__box clearfix" : "quantity__box quantity__box_last clearfix"
+        )
+            .quantity_left
+                p.quantity__pills-wrap
+                    span.quantity__pills!= "30 pills"
+                    span.quantity__pills.quantity__pills_mg!= " x 25mg"
+
+                p.quantity__perPill-wrap
+                    span.quantity__perPill!= "Per pill"
+                    span.quantity__perPill_price!= " $4.25 "
+                    span.quantity__perPill_bonus!= " + 8 Bonus Pills"
+
+            .quantity_center
+                if(i > 4)
+                    p.quantity__free!= "- Free</br><span class='quantity__free_next'></span>Delivery"
+
+                p.quantity__price!= "$1279.50"
+
+            .quantity_right
+                +btnIcon("btn__quantity quantity__btn", "ADD TO CART")
+
+    p.quantity__title!= "Expected Delivery Date"
+
+    p.quantity__delivery.clearfix
+        span.quantity__delivery-name!= "AirMail:"
+        span.quantity__delivery-data!= "Friday, 20 February"
+        span.quantity__delivery-price!= "$20.00"
+    p.quantity__delivery.clearfix
+        span.quantity__delivery-name!= "EMS:"
+        span.quantity__delivery-data!= "Monday, 12 February"
+        span.quantity__delivery-price!= "$30.00"

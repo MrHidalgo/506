@@ -1,0 +1,10 @@
+
+.dosage.clearfix
+    -for(var i = 0; i < 8; i++)
+        a(
+            href="javascript:void(0);"
+            title!= (15 * i) + "mg"
+            class!= (i === 3) ? "dosage__box btn-dosage-js active" : "dosage__box btn-dosage-js"
+        )
+            .dosage__wrap
+                p.dosage__num!= (15 * i) + "mg"

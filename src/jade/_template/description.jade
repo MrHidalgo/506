@@ -35,8 +35,17 @@ mixin descriptionBtn(descriptionName)
         .main__title-wrap.clearfix
             +mainTitle("main__title_left", "Choose Dosage")
 
+        include dosage
+
         .main__title-wrap.clearfix
-            +mainTitle("main__title_left", "Choose Quantity")
+            +mainTitle("main__title_left", "Choose Quantity Product")
+
+        include quantity-product
+
+        .main__title-wrap.clearfix
+            +mainTitle("main__title_left", "Choose Quantity Pack")
+
+        include quantity-pack
 
         .description__block
             +descriptionBtn("General Info")
