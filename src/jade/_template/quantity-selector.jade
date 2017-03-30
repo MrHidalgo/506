@@ -1,0 +1,95 @@
+-
+    var quantityArr = [
+        "180 pills - $135.00",
+        "180 pills - $135.00",
+        "180 pills - $135.00",
+        "180 pills - $135.00",
+        "180 pills - $135.00",
+        "180 pills - $135.00",
+        "180 pills - $135.00",
+        "180 pills - $135.00",
+        "180 pills - $135.00",
+        "180 pills - $135.00"
+    ];
+
+
+.quantity
+
+    .quantity__select
+        +selectWrap(quantityArr)
+
+    p.quantity__perPill_bonus
+        i.quantity__perPill_bonus--icon
+        span.quantity__perPill_bonus--text!= " + 8 Bonus Pills"
+
+    p.quantity__perPill-wrap.quantity__perPill_select.clearfix
+        span.quantity__perPill!= "Per pill"
+        span.quantity__perPill_price!= " $4.25 "
+
+    p.quantity__title!= "Expected Delivery Date"
+
+    p.quantity__delivery.quantity__delivery_select.clearfix
+        span.quantity__delivery-name!= "AirMail:"
+        span.quantity__delivery-data!= "Friday, 20 February"
+        span.quantity__delivery-price!= "$20.00"
+    p.quantity__delivery.quantity__delivery_free.quantity__delivery_select.clearfix
+        span.quantity__delivery-name!= "EMS:"
+        span.quantity__delivery-data!= "Monday, 12 February"
+        span.quantity__delivery-price!= "FREE"
+
+    +btnIcon("btn__quantity btn__quantity_big quantity__btn", "ADD TO CART")
+
+
+
+    //-for(var i = 0; i < 8; i++)
+        div(
+            class!= (i !== 7) ? "quantity__box clearfix" : "quantity__box quantity__box_last clearfix"
+        )
+            .quantity_left
+                p.quantity__pills-wrap
+                    span.quantity__pills!= "30 pills"
+                    span.quantity__pills.quantity__pills_mg!= " x 25mg"
+
+                p.quantity__perPill-wrap.quantity__perPill_margin
+                    span.quantity__perPill!= "Per pill"
+                    span.quantity__perPill_price!= " $4.25 "
+                    span.quantity__perPill_bonus!= " + 8 Bonus Pills"
+
+                p.quantity__package.quantity__package-free.clearfix
+                    span.quantity__package_name!= "Viagra"
+                    span.quantity__package_free!= " - FREE"
+                    span.quantity__package_pills!= "30 pills"
+                p.quantity__package.clearfix
+                    span.quantity__package_name!= "Viagra Super Force"
+                    span.quantity__package_pills!= "25 pills"
+                if(i < 3)
+                    p.quantity__package.clearfix
+                        span.quantity__package_name!= "Super Force Discount Pack"
+                        span.quantity__package_pills!= "40 pills"
+                    p.quantity__package.clearfix
+                        span.quantity__package_name!= "Maximum Potency Testosterone Booster"
+                        span.quantity__package_pills!= "100 pills"
+                    p.quantity__package.clearfix
+                        span.quantity__package_name!= "Professional Discount Pack"
+                        span.quantity__package_pills!= "14 pills"
+
+            .quantity_center.clearfix
+                if(i > 5)
+                    p.quantity__free!= "- Free</br><span class='quantity__free_next'></span>Delivery"
+
+                p.quantity__price!= "$1279.50"
+
+
+            .quantity_right
+                +btnIcon("btn__quantity quantity__btn", "ADD TO CART")
+    //
+    //p.quantity__title!= "Expected Delivery Date"
+    //
+    //p.quantity__delivery.clearfix
+    //    span.quantity__delivery-name!= "AirMail:"
+    //    span.quantity__delivery-data!= "Friday, 20 February"
+    //    span.quantity__delivery-price!= "$20.00"
+    //p.quantity__delivery.clearfix
+    //    span.quantity__delivery-name!= "EMS:"
+    //    span.quantity__delivery-data!= "Monday, 12 February"
+    //    span.quantity__delivery-price!= "$30.00"

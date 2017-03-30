@@ -24,7 +24,7 @@
 	&__block {
 		width: 360px;
 		min-height: 195px;
-		background-color: $c-black;
+		background-color: $c-nero;
 		text-align: left;
 
 		.flash_short & {
@@ -141,7 +141,7 @@
 			left: 0;
 			top: 20px;
 			@include mixinDimensions($w-all, 4px);
-			background-color: $c-nero;
+			background-color: lighten($c-nero, 5%);
 		}
 	}
 

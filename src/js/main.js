@@ -334,4 +334,15 @@ $(document).ready(function(){
         $(".btn-dosage-js").removeClass("active");
         $(this).addClass("active");
     });
+
+
+    /* RECENTLY */
+    $(".btn-recently-js").on('click', function () {
+        var btnAttr = $(this).attr("data-recently");
+
+        $(".btn-recently-js").removeClass("active");
+        $(".recently__carousel").removeClass("active");
+        $(this).addClass("active");
+        $(".recently__carousel--" + btnAttr).addClass("active");
+    });
 });

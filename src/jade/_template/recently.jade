@@ -1,0 +1,34 @@
+
+.recently
+    .recently__link.clearfix
+        .recently__link_left
+            a(
+                href="javascript:void(0);"
+                data-recently='like'
+                title="You might also like"
+                class="recently__btn active btn-recently-js"
+            )!= "You might also like"
+
+        .recently__link_right
+            a(
+                href="javascript:void(0);"
+                data-recently='view'
+                title="Recently viewed"
+                class="recently__btn btn-recently-js"
+            )!= "Recently viewed"
+
+
+
+    .recently__carousel.recently__carousel--like.active
+        .product.product_grid.clearfix.recently__carousel_like
+            +productBox(10, false, false)
+
+        .recently__btn_prev
+        .recently__btn_next
+
+    .recently__carousel.recently__carousel--view
+        .product.product_grid.clearfix.recently__carousel_view
+            +productBox(12, false, false)
+
+        .recently__btn_prev
+        .recently__btn_next

@@ -1,0 +1,200 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MIXIN
+///
+.basket {
+	margin: {
+		top: 60px;
+		bottom: 120px;
+	};
+
+
+	&__box {
+		height: 54px;
+		border-bottom: 1px solid $c-whisper;
+
+
+		&_left {
+			float: left;
+			white-space: nowrap;
+		}
+		&_right {
+			float: right;
+			text-align: right;
+			font-size: 14px;
+			padding-top: 6.5px;
+		}
+	}
+
+
+	&__img {
+		margin-top: 2.5px;
+		width: 50px;
+
+
+		&-wrap {
+			float: left;
+			height: 54px;
+			margin-right: 10px;
+		}
+	}
+
+
+	&__product {
+		font-size: 14px;
+		color: $c-nero;
+
+
+		&-wrap {
+			float: left;
+			padding-top: 6.5px;
+		}
+	}
+
+
+	&__price {
+		font-family: $f-R-bold;
+	}
+
+
+	&__remove {
+		color: $c-navy-blue;
+		text-decoration: underline;
+	}
+
+
+	&__title {
+		font-size: 14px;
+		color: $c-nero;
+
+
+		&_top {
+			margin-top: 10px;
+		}
+
+
+		&_center {
+			text-align: center;
+		}
+	}
+
+
+	&__main-title {
+		font-size: 14px;
+		color: $c-nero;
+		padding-bottom: 5px;
+		border-bottom: 1px solid $c-whisper;
+
+
+		&-icon {
+			display: inline-block;  *display: inline;  *zoom: 1;
+			vertical-align: middle;
+			margin-right: 10px;
+			@include retina-sprite($sp-i-basket-dark-group);
+		}
+	}
+
+
+	&__select {
+		margin: {
+			top: 5px;
+			bottom: 5px;
+		};
+
+
+		&_text {
+			font-size: 12px;
+			color: $c-grey-suit;
+			margin-bottom: 10px;
+		}
+	}
+
+
+	&__total {
+		height: 32px;
+		line-height: 32px;
+		font-size: 14px;
+		color: $c-nero;
+
+
+		&_top {
+			border-top: 1px solid $c-whisper;
+
+
+			.body__checkout & {
+				border-top: none;
+			}
+		}
+		&_bottom {
+			border-bottom: 1px solid $c-whisper
+		}
+
+
+		&-num {
+			float: right;
+		}
+	}
+
+
+	&__main-total {
+		height: 55px;
+		line-height: 55px;
+		font: {
+			family: $f-R-medium;
+			size: 20px;
+		};
+		border: {
+			top: 1px solid $c-whisper;
+			bottom: 1px solid $c-whisper;
+		}
+
+
+		.body__checkout & {
+			border-bottom: none;
+		}
+
+
+		&--num {
+			float: right;
+			color: $c-radical-red;
+		}
+	}
+
+
+	&__info {
+		font-size: 14px;
+		color: $c-grey-suit;
+		text-align: center;
+		padding: {
+			top: 25px;
+			bottom: 25px;
+		};
+		
+		
+		&_left {
+			text-align: left;
+		}
+		&_color {
+			color: $c-radical-red;
+		}
+	}
+
+
+	&__btn {
+		height: 45px;
+		line-height: 45px;
+		font-size: 14px;
+		text-decoration: underline;
+		color: $c-navy-blue;
+
+
+		.btn__icon {
+			@include retina-sprite($sp-i-basket-arr-group);
+		}
+	}
+}

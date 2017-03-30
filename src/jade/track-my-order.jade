@@ -1,0 +1,85 @@
+include _mixin/mixin
+include _mixin/macrosMixin
+
+doctype html
+// if JavaScript disable in page add class "no-js"
+html(
+    lang="en"
+    class="js"
+)
+
+
+    +headSite("506 TRACK MY ORDER", linkSite.styleLinkIndex, "")
+
+    // open-menu open-popup cart_fill
+    body(class="cart_fill")
+
+
+        include _template/menu
+        include _template/header
+        include _template/category
+
+
+        .body__row
+            .container
+
+                include _template/breadcrumbs
+
+                .main__title-wrap.clearfix
+                    +mainTitle("main__title_left", "Track my order")
+
+                .form.track
+                    .form__container
+
+                        p.form__sub-title!= "Fill out this form to track your order"
+                        p.form__text!= "Check the status of your order here"
+
+                        .form__field
+                            input(
+                                type="text"
+                                placeholder="Order ID"
+                                name=""
+                                class="input"
+                            )
+                        p.form__info
+                            i.form__info-icon
+                            != "Check the status of your order here"
+                        .form__field
+                            input(
+                                type="text"
+                                placeholder="E-mail"
+                                name=""
+                                class="input"
+                            )
+                        .form__field.form__field-code
+                            input(
+                                type="text"
+                                placeholder="Verification Code"
+                                name=""
+                                id="code"
+                                class="input"
+                            )
+                            label(for="code", class="form__label")
+                                i.form__label-icon
+                        .form__field
+                            +btn("btn__send", "SEND")
+
+
+                include ./_template/flash
+
+                .bottom-info.clearfix
+                    .bottom-info_right
+                        include ./_template/go-top
+                    .bottom-info_centered
+                        include ./_template/coupon
+                    .bottom-info_left
+                        include ./_template/certificate
+
+
+        include ./_template/footer
+        include ./_template/bottom-certificate
+        include _template/modal__coupon
+        include _template/slide-letter
+
+    - for(var i = 0; i < linkSite.scriptLink.length; i++)
+        script(src= linkSite.scriptLink[i])

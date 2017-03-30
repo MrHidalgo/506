@@ -1,0 +1,67 @@
+include _mixin/mixin
+include _mixin/macrosMixin
+
+doctype html
+// if JavaScript disable in page add class "no-js"
+html(
+    lang="en"
+    class="js"
+)
+
+
+    +headSite("506 PACK", linkSite.styleLinkIndex, "")
+
+    // open-menu open-popup cart_fill
+    body(class="cart_fill")
+
+
+        include _template/menu
+        include _template/header
+        include _template/category
+
+
+        .body__row
+            .container
+
+
+                include _template/breadcrumbs
+
+
+                .main__title-wrap.clearfix
+                    +mainTitle("main__title_left", "Cheap ED Packs!")
+
+
+                .pack.clearfix
+                    +packBox(30)
+
+                a(
+                    href="javascript:void(0);"
+                    title="View all products"
+                    class="btn__view-all"
+                )
+                    span.btn__view-all-icon--wrap
+                        i.btn__view-all-icon
+                    p(
+                        class="btn__view-all-text"
+                        data-id="SHOW MORE PRODUCTS"
+                    )!= "SHOW MORE PRODUCTS"
+
+
+                .bottom-info.clearfix
+                    .bottom-info_right
+                        include ./_template/go-top
+                    .bottom-info_centered
+                        include ./_template/coupon
+                    .bottom-info_left
+                        include ./_template/certificate
+
+
+        include ./_template/footer
+
+        include ./_template/bottom-certificate
+
+        include _template/modal__coupon
+        include _template/slide-letter
+
+    - for(var i = 0; i < linkSite.scriptLink.length; i++)
+        script(src= linkSite.scriptLink[i])

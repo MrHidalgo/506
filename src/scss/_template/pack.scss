@@ -1,0 +1,130 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MIXIN
+///
+.pack {
+	margin: {
+		top: 25px;
+		bottom: 25px;
+	};
+
+
+	&__box {
+		cursor: pointer;
+		float: left;
+		width: ($w-all / 4);
+
+
+		&:hover {
+			box-shadow: 0 4px 10px 0 rgba(0,0,0,0.1);
+
+
+			.pack__box_top {
+				border-color: $c-whisper;
+			}
+			.pack__img {
+				opacity: 0;
+			}
+			.pack__list {
+				opacity: 1;
+			}
+		}
+
+
+		&_top,
+		&_bottom {
+			padding: {
+				left: 15px;
+				right: 15px;
+			};
+		}
+		&_top {
+			padding: {
+				top: 20px;
+				bottom: 15px;
+			}
+			border-bottom: 1px solid $c-white;
+		}
+		&_bottom {
+			padding: {
+				top: 15px;
+				bottom: 20px;
+			}
+		}
+	}
+
+
+	&__title {
+		font-size: 14px;
+		text-align: center;
+		padding-bottom: 15px;
+	}
+
+
+	&__img {
+		&-wrap {
+			position: relative;
+			text-align: center;
+			height: 150px;
+		}
+	}
+
+
+	&__list {
+		font-size: 12px;
+		position: absolute;
+		opacity: 0;
+		top: 0;
+		left: 0;
+		width: 100%;
+		text-align: left;
+
+
+		&-item {
+			&_free {
+				.pack__list-name {
+					font-family: $f-R-medium;
+				}
+				.pack__list-name--free {
+					color: $c-radical-red;
+				}
+			}
+		}
+		&-count {
+			float: right;
+		}
+	}
+
+
+	&__price {
+		text-align: center;
+		padding: {
+			top: 15px;
+			bottom: 10px;
+		};
+
+
+		&_num,
+		&_off {
+			vertical-align: middle;
+		}
+
+
+		&-num {
+			font-family: $f-R-medium;
+		}
+		&-off {
+			font: {
+				size: 14px;
+				family: $f-R-bold;
+			}
+			color: $c-radical-red;
+			margin-left: 5px;
+		}
+	}
+}

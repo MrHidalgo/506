@@ -111,3 +111,56 @@ mixin selectWrap(dataArr)
                 option!= dataArr[i]
         span.input__select-icon--wrap
             i.input__select-icon
+
+
+//- PACK
+mixin packBox(packNum)
+    -for(var i = 0; i < packNum; i++)
+        .pack__box
+            .pack__box_top
+                .pack__wrap
+                    p.pack__title!= "Super Force Discount Pack"
+                    .pack__img-wrap
+                        img(
+                            src="./image/img-product.png"
+                            title="Super Force Discount Pack"
+                            alt="Super Force Discount Pack"
+                            class="pack__img img_responsive"
+                        )
+                        .pack__list
+                            p(
+                                class!= "pack__list-item clearfix pack__list-item_free"
+                            )
+                                span.pack__list-name!= "Viagra <span class='pack__list-name--free'>- FREE</span>"
+                                span.pack__list-count!= "10"
+                            -for(var j = 0; j < 5; j++)
+                                p(
+                                    class!= "pack__list-item clearfix"
+                                )
+                                    span.pack__list-name!= (j % 2 === 0) ? "Viagra" : "Super Force Discount Pack"
+                                    span.pack__list-count!= (j > 0) ? (33 * j) : "5"
+
+                            +btnIcon("btn__more btn_border", "MORE INFO")
+
+            .pack__box_bottom
+                .pack__select
+                    -
+                        var packArr = [
+                            "180 pills - $135.00",
+                            "180 pills - $135.00",
+                            "180 pills - $135.00",
+                            "180 pills - $135.00",
+                            "180 pills - $135.00",
+                            "180 pills - $135.00",
+                            "180 pills - $135.00",
+                            "180 pills - $135.00",
+                            "180 pills - $135.00",
+                            "180 pills - $135.00"
+                        ];
+                    +selectWrap(packArr)
+
+                p.pack__price
+                    span.pack__price-num!= "$243.80"
+                    span.pack__price-off!= "75 OFF"
+
+                +btnIcon("btn__pack", "ADD TO CART")

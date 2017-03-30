@@ -1,0 +1,74 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN
+///
+.form {
+	&__field {
+		&-code {
+			position: relative;
+			width: 190px;
+			margin-top: 10px;
+		}
+	}
+
+
+	&__email,
+	&__address,
+	&__phone {
+		.input {
+			margin-bottom: 10px;
+		}
+	}
+
+
+	&__sub-title {
+		font: {
+			size: 16px;
+			family: $f-RW-medium;
+		}
+	}
+
+
+	&__text {
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+
+
+	&__info {
+		color: $c-grey-suit;
+		font-size: 11px;
+		margin-bottom: 5px;
+
+
+		&-icon {
+			display: inline-block;  *display: inline;  *zoom: 1;
+			vertical-align: middle;
+			margin-right: 5px;
+			@include retina-sprite($sp-i-form-info-group);
+		}
+	}
+
+
+	&__label {
+		position: absolute;
+		top: 7px;
+		right: 7px;
+		@include mixinDimensions(42px, 28px);
+		border-radius: 6px;
+		background-color: $c-radical-red;
+
+
+		&-icon {
+			position: absolute;
+			top: 4px;
+			left: 12px;
+			@include retina-sprite($sp-i-refresh-group);
+		}
+	}
+}

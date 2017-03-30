@@ -82,37 +82,5 @@ html(
         include _template/modal__coupon
         include _template/slide-letter
 
-        div(class="lang__btn", style="text-align:center; padding-top:50px; padding-bottom:15px; position:relative; z-index;100;")
-            a(
-            href="javascript:void(0);"
-            data-lang="en"
-            )!= "|| -- EN -- ||"
-            a(
-            href="javascript:void(0);"
-            data-lang="de"
-            )!= "-- DE -- ||"
-            a(
-            href="javascript:void(0);"
-            data-lang="fr"
-            )!= "-- FR -- ||"
-            a(
-            href="javascript:void(0);"
-            data-lang="it"
-            )!= "-- IT -- ||"
-            a(
-            href="javascript:void(0);"
-            data-lang="pt"
-            )!= "-- PT -- ||"
-            a(
-            href="javascript:void(0);"
-            data-lang="es"
-            )!= "-- ES -- ||"
-            a(
-            href="javascript:void(0);"
-            data-lang="jp"
-            )!= "-- JP -- ||"
-
-
-
     - for(var i = 0; i < linkSite.scriptLink.length; i++)
         script(src= linkSite.scriptLink[i])

@@ -7,15 +7,74 @@
 ///
 /// BODY
 ///
-.body__row {
-	> .container {
-		@include respond-to(medium-max) {
-			padding: {
-				left: 0;
-				right: 0;
-			};
-			min-width: 0;
-			max-width: $w-all;
+.body {
+	&__row {
+		position: relative;
+		// bad, very bad idea
+		min-height: calc(100vh - 75px);
+
+
+		> .container {
+			@include respond-to(medium-max) {
+				padding: {
+					left: 0;
+					right: 0;
+				}
+			;
+				min-width: 0;
+				max-width: $w-all;
+			}
+		}
+
+		// bad, very bad idea
+		&--left,
+		&--right {
+			position: absolute;
+			top: 0;
+			height: $w-all;
+		}
+
+		&--left {
+			left: 0;
+			width: 60%;
+		}
+		&--right {
+			right: 0;
+			width: 40%;
+			background-color: $c-white-smoke;
+		}
+
+
+		&_left,
+		&_right {
+			float: left;
+			// bad, very bad idea
+			min-height: calc(100vh - 75px);
+		}
+		&_left {
+			width: (622px + 62px);
+			.body__row_wrap {
+				padding-right: 62px;
+			}
+		}
+		&_right {
+			width: (1170px - (622px + 62px) - 1);
+			border-left: 1px solid $c-whisper;
+			background-color: $c-white-smoke;
+			.body__row_wrap {
+				padding: {
+					top: 30px;
+					left: 30px;
+				}
+			}
+		}
+	}
+	&__basket {
+		> .container {
+			max-width: 750px;
+			@include respond-to(medium) {
+				max-width: 720px;
+			}
 		}
 	}
 }
@@ -121,6 +180,56 @@
 		width: 215px;
 		height: 45px;
 		line-height: 45px;
+
+
+		&_big {
+			width: 560px;
+			margin: {
+				top: 15px;
+				bottom: 30px;
+			}
+		}
+	}
+
+
+	&__more {
+		display: block;
+		margin-top: 20px;
+	}
+
+
+	&__pack {
+		display: block;
+	}
+
+
+	&__basket {
+		float: right;
+		@include mixinDimensions(285px, 45px);
+		line-height: 45px;
+	}
+
+
+	&__ordered {
+		display: inline-block;  *display: inline;  *zoom: 1;
+		padding: {
+			left: 15px;
+			right: 15px;
+		};
+		margin-top: 5px;
+
+
+		&-wrap {
+			text-align: center;
+		}
+	}
+
+
+	&__send {
+		display: block;
+		height: 45px;
+		line-height: 45px;
+		margin-top: 20px;
 	}
 
 
@@ -128,11 +237,18 @@
 	&__icon {
 		display: inline-block;  *display: inline;  *zoom: 1;
 		vertical-align: middle;
+		margin-right: 10px;
 
 
-		.btn__quantity & {
-			margin-right: 10px;
+		.btn__quantity &,
+		.btn__pack & {
 			@include retina-sprite($sp-i-btn-add-cart-group);
+		}
+		.btn__more & {
+			@include retina-sprite($sp-i-more-info-group);
+		}
+		.btn__basket & {
+			@include retina-sprite($sp-i-basket-group);
 		}
 	}
 	// TEXT
@@ -305,6 +421,11 @@
 			}
 
 
+			.body__checkout & {
+				margin-bottom: 20px;
+			}
+
+
 			&_border {
 				&--top {
 					@include respond-to(small-max) {
@@ -355,10 +476,11 @@ select {
 }
 .input__select {
 	position: relative;
-	@include mixinDimensions($w-all, 42px);
+	// 1.5 - padding, 0.1 - border-left/right
+	@include mixinDimensions(($w-all - 1.5 - (0.1 * 2)), 40px);
 	line-height: 42px;
 	padding: {
-		left: 15px;
+		left: 1.5%;
 	};
 	font: {
 		size: 14px;
@@ -368,6 +490,10 @@ select {
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.06);
 	transition-property: border, box-shadow;
 	transition: .3s ease-in-out;
+	@include respond-to(medium-max) {
+		@include mixinDimensions($w-all, 42px);
+		padding-left: 15px;
+	}
 
 
 	&:hover {
@@ -379,6 +505,13 @@ select {
 
 		.input__select-icon {
 			@include retina-sprite($sp-i-select-arr-hover-group);
+
+
+			&--wrap {
+				border-color: $c-black;
+				transition-property: border-color;
+				transition: .3s ease-in-out;
+			}
 		}
 	}
 
@@ -398,6 +531,8 @@ select {
 			right: 0;
 			@include mixinDimensions(41px, 22px);
 			border-left: 1px solid $c-gainsboro;
+			transition-property: border-color;
+			transition: .3s ease-in-out;
 		}
 	}
 }
@@ -623,5 +758,56 @@ select {
 	}
 	&_right {
 		width: 660px;
+	}
+}
+///
+/// PAGE WITH INPUT
+///
+.track {
+	margin: {
+		top: 45px;
+		bottom: 120px;
+	};
+	.form__container {
+		max-width: 560px;
+		margin: {
+			left: auto;
+			right: auto;
+		};
+	}
+}
+.input {
+	height: (42px - (1 * 2));
+	border: 1px solid $c-whisper;
+	padding: 0;
+	padding-left: 15px;
+	border-radius: 0;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.06);
+	font-size: 14px;
+
+	.track & {
+		// 560 max
+		// 0.17857142857 = 1px[border] * 100% / 560
+		// 2.67857142857 = 15px[padding-left] * 100% / 560
+		width: ($w-all - (0.17857142857 * 2) - 2.67857142857);
+		@include respond-to(medium-max) {
+			width: $w-all;
+		}
+	}
+	.form__field-code & {
+		// 190 max
+		width: ($w-all - (0.52631578947 * 2) - 7.89473684211);
+		@include respond-to(medium-max) {
+			width: $w-all;
+		}
+	}
+	.form__email &,
+	.form__address &,
+	.form__phone & {
+		// 622
+		width: ($w-all - (0.16077170418 * 2) - 2.4115755627);
+		@include respond-to(medium-max) {
+			width: $w-all;
+		}
 	}
 }

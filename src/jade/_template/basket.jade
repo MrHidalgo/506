@@ -1,0 +1,40 @@
+-
+    var basketArrSelect = [
+        "180 pills - $135.00",
+        "180 pills - $135.00",
+        "180 pills - $135.00",
+        "180 pills - $135.00",
+        "180 pills - $135.00",
+        "180 pills - $135.00",
+        "180 pills - $135.00",
+        "180 pills - $135.00",
+        "180 pills - $135.00",
+        "180 pills - $135.00"
+    ];
+
+
+.basket
+
+    .main__title-wrap.clearfix
+        +mainTitle("main__title_left", "Shopping Cart")
+
+    -for(var i = 0; i < 2; i++)
+        include _macros/_basket/box
+
+    .main__title-wrap.clearfix
+        +mainTitle("main__title_left", "Choose Free Bonus")
+
+    p.basket__title.basket__title_top!= "Select your free bonus presented:"
+
+    .basket__select
+        +selectWrap(basketArrSelect)
+
+    p.basket__select_text!= "Your bonus grows with your order simultaneously."
+
+    include _macros/_basket/total
+
+    include _macros/_basket/main-total
+
+    p.basket__info!= "You will have a chance to review your order before it is placed."
+
+    include _macros/_basket/btn

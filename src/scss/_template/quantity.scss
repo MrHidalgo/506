@@ -70,6 +70,21 @@
 		color: $c-grey-suit;
 
 
+		&_select {
+			width: 560px;
+			padding: {
+				top: 15px;
+			};
+			.quantity__perPill {
+				float: left;
+				color: $c-nero;
+			}
+			.quantity__perPill_price {
+				float: right;
+			}
+		}
+
+
 		&_margin {
 			margin-bottom: 10px;
 		}
@@ -79,6 +94,17 @@
 		&_bonus {
 			color: $c-radical-red;
 			font-family: $f-R-bold;
+
+
+			&--icon {
+				display: inline-block;  *display: inline;  *zoom: 1;
+				vertical-align: middle;
+				margin-right: 5px;
+				@include retina-sprite($sp-i-per-pill-group);
+			}
+			&--text {
+				vertical-align: middle;
+			}
 		}
 	}
 
@@ -147,6 +173,18 @@
 		margin-bottom: 10px;
 
 
+		&_free {
+			.quantity__delivery-price {
+				color: $c-radical-red;
+			}
+		}
+
+
+		&_select {
+			width: 560px;
+		}
+
+
 		&-name {
 			display: inline-block;  *display: inline;  *zoom: 1;
 			font-family: $f-R-bold;
@@ -159,5 +197,14 @@
 			float: right;
 			color: $c-nero;
 		}
+	}
+
+
+	&__select {
+		width: 543px;
+		margin: {
+			top: 20px;
+			bottom: 20px;
+		};
 	}
 }

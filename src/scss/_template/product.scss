@@ -72,6 +72,22 @@
 			$widthSum : $widthPaddingBox - 3.5;
 			width: $widthSum;
 		}
+		.recently__carousel & {
+			$widthContainerBig : 1170;
+			$widthContainerLarge : 940;
+			$widthPaddingBoxBig : ($widthContainerBig / 5);
+			$widthPaddingBoxLarge : ($widthContainerLarge / 5);
+			$widthSumBig : $widthPaddingBoxBig - (30 * 2);
+			$widthSumLarge : $widthPaddingBoxLarge - (30 * 2);
+			padding: {
+				right: 30px;
+				left: 30px;
+			}
+			width: $widthSumBig;
+			@include respond-to(large) {
+				width: $widthSumLarge;
+			}
+		}
 
 
 		&_hide {
@@ -257,6 +273,11 @@
 .product {
 	&__box {
 		position: relative;
+
+
+		&:focus {
+			outline: none;
+		}
 	}
 
 

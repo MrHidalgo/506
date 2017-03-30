@@ -16,6 +16,22 @@ app.use('/categories',            express.static('./dist/', {
 app.use('/product',            express.static('./dist/', {
         'index' : 'product.html'
 }));
+// PACK PAGE
+app.use('/pack',            express.static('./dist/', {
+        'index' : 'pack.html'
+}));
+// CART PAGE
+app.use('/cart',            express.static('./dist/', {
+        'index' : 'cart.html'
+}));
+// TRACK MY ORDER PAGE
+app.use('/track-my-order',            express.static('./dist/', {
+        'index' : 'track-my-order.html'
+}));
+// CHECKOUT STEP 1 PAGE
+app.use('/checkout_step-1',            express.static('./dist/', {
+        'index' : 'checkout_step-1.html'
+}));
 
 
 app.listen(app.get('port'),	function()	{

@@ -1,0 +1,22 @@
+
+.basket__box.clearfix
+    .basket__box_left.clearfix
+        //span.aligner
+        .basket__img-wrap
+            img(
+                src="./image/img-product.png"
+                title="Product name"
+                alt="Product name"
+                class="basket__img"
+            )
+        .basket__product-wrap
+            p.basket__product!= (i % 2 === 0) ? "Professional Discount" : "Maximum Potency Testosterone Booster"
+            p.basket__product!= "Pack x 360 pills"
+
+    .basket__box_right
+        p.basket__price!= "$4564.12"
+        a(
+            href="javascript:void(0);"
+            title="Remove product"
+            class="basket__remove"
+        )!= "Remove"

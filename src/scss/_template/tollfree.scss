@@ -25,6 +25,11 @@
 	}
 
 
+	.header_checkout & {
+		float: right;
+	}
+
+
 	.footer__tool-free & {
 		display: none;
 		@include respond-to(small-max) {

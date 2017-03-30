@@ -47,6 +47,11 @@ mixin descriptionBtn(descriptionName)
 
         include quantity-pack
 
+        .main__title-wrap.clearfix
+            +mainTitle("main__title_left", "Choose Quantity Selector")
+
+        include quantity-selector
+
         .description__block
             +descriptionBtn("General Info")
             .description__drop

@@ -23,6 +23,12 @@
 	}
 
 
+	&.header_checkout {
+		border-top: none;
+		border-bottom: 1px solid $c-whisper;
+	}
+
+
 	.container {
 		@include respond-to(medium-max) {
 			min-width: 0;

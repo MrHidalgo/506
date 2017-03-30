@@ -1,0 +1,117 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN
+///
+.recently {
+	margin: {
+		top: 30px;
+		bottom: 30px;
+	};
+	border-bottom: 1px solid $c-whisper;
+
+
+	&__link {
+		border-bottom: 1px solid $c-whisper;
+
+
+		&_left,
+		&_right {
+			float: left;
+			@include mixinDimensions(50%, 45px);
+		}
+
+
+		&_left {
+			.recently__btn {
+				float: right;
+				margin-right: 50px;
+			}
+		}
+		&_right {
+			.recently__btn {
+				float: left;
+				margin-left: 50px;
+			}
+		}
+	}
+
+
+	&__btn {
+		line-height: 45px;
+		font: {
+			family: $f-RW-medium;
+		};
+		color: $c-radical-red;
+
+
+		&.active {
+			color: $c-nero;
+			border-bottom: 1px solid $c-radical-red;
+		}
+
+
+		&_prev,
+		&_next {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			margin-top: -13px;
+		}
+
+
+		&_prev {
+			left: 0;
+			@include retina-sprite($sp-i-carousel-prev-group);
+			&:hover {
+				@include respond-to(medium-min) {
+					@include retina-sprite($sp-i-carousel-prev-active-group);
+				}
+			}
+			&:active {
+				@include retina-sprite($sp-i-carousel-prev-active-group);
+			}
+		}
+		&_next {
+			right: 0;
+			@include retina-sprite($sp-i-carousel-next-group);
+			&:hover {
+				@include respond-to(medium-min) {
+					@include retina-sprite($sp-i-carousel-next-active-group);
+				}
+			}
+			&:active {
+				@include retina-sprite($sp-i-carousel-next-active-group);
+			}
+		}
+	}
+
+
+	&__carousel {
+		position: relative;
+
+
+		&--like,
+		&--view {
+			overflow: hidden;
+
+
+			&.active {
+				opacity: 1;
+				height: auto;
+			}
+		}
+
+
+		&--like,
+		&--view {
+			opacity: 0;
+			height: 0;
+			//display: none;
+		}
+	}
+}
