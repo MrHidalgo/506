@@ -19,10 +19,65 @@
 
 	&__email,
 	&__address,
-	&__phone {
+	&__phone,
+	&__city,
+	&__postCode {
 		.input {
 			margin-bottom: 10px;
 		}
+	}
+
+
+	&__first-name,
+	&__last-name {
+		.input {
+			margin-bottom: 25px;
+		}
+	}
+
+
+	&__select {
+		.input__select {
+			margin-bottom: 10px;
+		}
+	}
+
+
+	&__first-name,
+	&__last-name,
+	&__select {
+		float: left;
+		width: (622px / 2 - (5));
+	}
+
+
+	&__first-name,
+	&__select-counrty {
+		padding-right: 5px;
+	}
+
+
+	&__last-name,
+	&__select-state {
+		padding-left: 5px;
+	}
+
+
+	&__postCode,
+	&__city {
+		float: left;
+	}
+
+
+	&__city {
+		width: (435px - 5);
+		padding-right: 5px;
+	}
+
+
+	&__postCode {
+		width: (622px - 435px - 5);
+		padding-left: 5px;
 	}
 
 

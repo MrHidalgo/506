@@ -30,6 +30,17 @@ function selectReset(selector){
 }
 
 
+function radioInit() {
+    $("div.radio__field").click(function(e) {
+        e.preventDefault();
+        $(this).parent().find("div.radio__field").removeClass("active");
+        $(this).addClass('active');
+        $(this).parent().find('input[type="radio"]:checked').prop('checked', false);
+        $(this).find('input[type="radio"]').prop('checked', true).change();
+    });
+}
+
+
 function categoryBtnToggle() {
     $(".btn-category-js").toggleClass("active");
     $(".category__drop").toggleClass("category__drop_show");
@@ -83,6 +94,8 @@ $(document).ready(function(){
 
     /* CUSTOM SELECT INIT */
     selectInit();
+    /* CUSTOM RADIO INIT */
+    radioInit();
     /* LESS TEXT DESCRIPTION IN */
     less(50, ".product_grid .product__desc");
     less(250, ".product_list .product__desc");

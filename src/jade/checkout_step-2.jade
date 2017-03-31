@@ -1,0 +1,128 @@
+include _mixin/mixin
+include _mixin/macrosMixin
+
+doctype html
+// if JavaScript disable in page add class "no-js"
+html(
+    lang="en"
+    class="js"
+)
+
+
+    +headSite("506 CHECKOUT STEP 2", linkSite.styleLinkIndex, "")
+
+    // open-menu open-popup cart_fill
+    body(class="cart_fill")
+
+
+        include _template/header-checkout
+
+
+        .body__row.body__checkout
+
+            .body__row--left
+            .body__row--right
+
+            .container.clearfix
+                .body__row_left
+                    .body__row_wrap
+
+                        include _template/breadcrumbs
+
+                        .main__title-wrap.main__title-wrap_bottom.clearfix
+                            +mainTitle("main__title_left", "Shipping Address")
+
+                        -
+                            var shippingLeftArr = [
+                                "Name",
+                                "Country",
+                                "State/province",
+                                "City",
+                                "Address",
+                                "Phone"
+                            ];
+                            var shippingRightArr = [
+                                "Earl Jefferson",
+                                "United States",
+                                "NY",
+                                "Washington",
+                                "47 South Baker Road Bluffton, SC 29910",
+                                "+1 876 458734"
+                            ];
+
+                        .shipping
+                            .shipping__table
+                                ul.shipping__list
+                                    -for(var i = 0; i < shippingLeftArr.length; i++)
+                                        li.shipping__item.clearfix
+                                            span.shipping__item_left!= shippingLeftArr[i]
+                                            span.shipping__item_right!= shippingRightArr[i]
+
+                            a(
+                                href="javascript:void(0);"
+                                title="Return to Shopping"
+                                class="basket__btn"
+                            )
+                                i.btn__icon
+                                != "Edit shipping address"
+
+                        .main__title-wrap.clearfix
+                            +mainTitle("main__title_left", "Shipping Method")
+
+                        p.basket__info.basket__info_left!= "Total amount of the invoice will be shown in USD <span class='basket__info_color'>($466.15)</span> In some cases the actual charged amount may differ from the total invoice amount due to the foreign transaction fee. You will have a chance to review your order before it is placed."
+
+                        include _template/_macros/_basket/btn
+
+                        include _template/footer-checkout
+
+                        include _template/bottom-certificate
+
+                .body__row_right
+                    .body__row_wrap
+
+                        p.basket__main-title
+                            i.basket__main-title-icon
+                            != "Order Summary"
+
+                        -for(var i = 0; i < 2; i++)
+                            include _template/_macros/_basket/box
+
+                        include _template/_macros/_basket/total
+
+                        include _template/_macros/_basket/main-total
+
+
+        //div(class="lang__btn", style="text-align:center; padding-top:50px; padding-bottom:15px; position:relative; z-index;100;")
+        //    a(
+        //    href="javascript:void(0);"
+        //    data-lang="en"
+        //    )!= "|| -- EN -- ||"
+        //    a(
+        //    href="javascript:void(0);"
+        //    data-lang="de"
+        //    )!= "-- DE -- ||"
+        //    a(
+        //    href="javascript:void(0);"
+        //    data-lang="fr"
+        //    )!= "-- FR -- ||"
+        //    a(
+        //    href="javascript:void(0);"
+        //    data-lang="it"
+        //    )!= "-- IT -- ||"
+        //    a(
+        //    href="javascript:void(0);"
+        //    data-lang="pt"
+        //    )!= "-- PT -- ||"
+        //    a(
+        //    href="javascript:void(0);"
+        //    data-lang="es"
+        //    )!= "-- ES -- ||"
+        //    a(
+        //    href="javascript:void(0);"
+        //    data-lang="jp"
+        //    )!= "-- JP -- ||"
+        //
+        //
+
+    - for(var i = 0; i < linkSite.scriptLink.length; i++)
+        script(src= linkSite.scriptLink[i])

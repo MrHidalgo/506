@@ -112,6 +112,32 @@ mixin selectWrap(dataArr)
         span.input__select-icon--wrap
             i.input__select-icon
 
+mixin inputWrap(className, placeholderName)
+    div(
+        class="form__field " + className
+    )
+        input(
+            type="text"
+            placeholder= placeholderName
+            name=""
+            class="input"
+        )
+
+mixin radioBtnWrap(className, idName, radioName)
+    div(
+        class="radio__field " + className
+    )
+        input(
+            type="radio"
+            id=idName
+            name="radio"
+        )
+        label(for=idName)
+            .radio__img-wrap
+                i.radio__img
+            .radio__name-wrap
+                span.aligner
+                span.radio__name!= radioName
 
 //- PACK
 mixin packBox(packNum)

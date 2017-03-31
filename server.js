@@ -29,8 +29,21 @@ app.use('/track-my-order',            express.static('./dist/', {
         'index' : 'track-my-order.html'
 }));
 // CHECKOUT STEP 1 PAGE
-app.use('/checkout_step-1',            express.static('./dist/', {
+app.use('/checkout1',            express.static('./dist/', {
         'index' : 'checkout_step-1.html'
+}));
+// CHECKOUT STEP 2 PAGE
+app.use('/checkout2',            express.static('./dist/', {
+        'index' : 'checkout_step-2.html'
+}));
+// CHECKOUT STEP 3 PAGE
+app.use('/checkout3',            express.static('./dist/', {
+        'index' : 'checkout_step-3.html'
+}));
+
+// CHECKOUT STEP 4 PAGE
+app.use('/checkout4',            express.static('./dist/', {
+        'index' : 'checkout_step-4.html'
 }));
 
 

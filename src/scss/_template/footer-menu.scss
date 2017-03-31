@@ -75,6 +75,12 @@
 		}
 
 
+		.footer_checkout & {
+			column-count: auto;
+			margin-bottom: 10px;
+		}
+
+
 		&_left,
 		&_right {
 			float: left;
@@ -108,5 +114,11 @@
 		writing-mode: lr-tb\9;
 		word-spacing: normal\9;
 		*filter:flipH();
+
+
+		.footer_checkout & {
+			display: inline-block;  *display: inline;  *zoom: 1;
+			margin-right: 15px;
+		}
 	}
 }

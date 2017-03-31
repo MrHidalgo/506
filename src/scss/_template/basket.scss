@@ -196,5 +196,12 @@
 		.btn__icon {
 			@include retina-sprite($sp-i-basket-arr-group);
 		}
+
+
+		&-wrap {
+			.body__checkout & {
+				padding-bottom: 120px;
+			}
+		}
 	}
 }

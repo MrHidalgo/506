@@ -21,6 +21,10 @@
 		min-height: 0;
 	}
 
+	&.footer_checkout {
+		background-color: $c-white;
+	}
+
 
 	&__top {
 		padding: {
@@ -31,6 +35,12 @@
 			padding: {
 				top: 0;
 				bottom: 0;
+			}
+		}
+
+		.footer_checkout & {
+			border: {
+				top: 1px solid $c-whisper;
 			}
 		}
 
@@ -102,6 +112,12 @@
 		@include respond-to(small-max) {
 			float: none;
 			width: $w-all !important;
+		}
+
+
+		.footer_checkout & {
+			float: none;
+			width: $w-all;
 		}
 
 

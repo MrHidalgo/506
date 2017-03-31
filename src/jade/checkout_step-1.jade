@@ -34,40 +34,63 @@ html(
                         .btn__ordered-wrap
                             +btn("btn_border btn__ordered", "YES, I HAVE ORDERED")
 
+                        .either
+                            span.either__text!= "OR"
+                            i.either__line
+
                         .main__title-wrap.clearfix
                             +mainTitle("main__title_left", "Customer Info")
 
-                        .form__field.form__email
-                            input(
-                                type="text"
-                                placeholder="E-Mail"
-                                name=""
-                                class="input"
-                            )
+                        +inputWrap("form__email", "E-Mail")
 
                         .main__title-wrap.clearfix
                             +mainTitle("main__title_left", "Shipping Address")
 
+                        .form__field-wrap.clearfix
+                            +inputWrap("form__first-name", "First Name")
+                            +inputWrap("form__last-name", "Last Name")
+
                         p.basket__title!= "Choose Your Gender:"
 
-                        .form__field.form__address
-                            input(
-                                type="text"
-                                placeholder="Address"
-                                name=""
-                                class="input"
-                            )
-                        .form__field.form__phone
-                            input(
-                                type="text"
-                                placeholder="Phone"
-                                name=""
-                                class="input"
-                            )
+                        .radio.clearfix
+                            +radioBtnWrap("active", "0", "Male")
+                            +radioBtnWrap("", "1", "Female")
+                            +radioBtnWrap("", "2", "Other")
+
+                        -
+                            var checkoutArrSelect = [
+                                "180 pills - $135.00",
+                                "180 pills - $135.00",
+                                "180 pills - $135.00",
+                                "180 pills - $135.00",
+                                "180 pills - $135.00",
+                                "180 pills - $135.00",
+                                "180 pills - $135.00",
+                                "180 pills - $135.00",
+                                "180 pills - $135.00",
+                                "180 pills - $135.00"
+                            ];
+
+                        .form__field-wrap.clearfix
+                            .form__select.form__select-counrty
+                                +selectWrap(checkoutArrSelect)
+                            .form__select.form__select-state
+                                +selectWrap(checkoutArrSelect)
+
+                        .form__field-wrap.clearfix
+                            +inputWrap("form__city", "City")
+                            +inputWrap("form__postCode", "Post Code")
+
+                        +inputWrap("form__address", "Address")
+                        +inputWrap("form__phone", "Phone")
 
                         p.basket__info.basket__info_left!= "Total amount of the invoice will be shown in USD <span class='basket__info_color'>($466.15)</span> In some cases the actual charged amount may differ from the total invoice amount due to the foreign transaction fee. You will have a chance to review your order before it is placed."
 
                         include _template/_macros/_basket/btn
+
+                        include _template/footer-checkout
+
+                        include _template/bottom-certificate
 
                 .body__row_right
                     .body__row_wrap
@@ -83,38 +106,6 @@ html(
 
                         include _template/_macros/_basket/main-total
 
-
-        //div(class="lang__btn", style="text-align:center; padding-top:50px; padding-bottom:15px; position:relative; z-index;100;")
-        //    a(
-        //    href="javascript:void(0);"
-        //    data-lang="en"
-        //    )!= "|| -- EN -- ||"
-        //    a(
-        //    href="javascript:void(0);"
-        //    data-lang="de"
-        //    )!= "-- DE -- ||"
-        //    a(
-        //    href="javascript:void(0);"
-        //    data-lang="fr"
-        //    )!= "-- FR -- ||"
-        //    a(
-        //    href="javascript:void(0);"
-        //    data-lang="it"
-        //    )!= "-- IT -- ||"
-        //    a(
-        //    href="javascript:void(0);"
-        //    data-lang="pt"
-        //    )!= "-- PT -- ||"
-        //    a(
-        //    href="javascript:void(0);"
-        //    data-lang="es"
-        //    )!= "-- ES -- ||"
-        //    a(
-        //    href="javascript:void(0);"
-        //    data-lang="jp"
-        //    )!= "-- JP -- ||"
-        //
-        //
 
     - for(var i = 0; i < linkSite.scriptLink.length; i++)
         script(src= linkSite.scriptLink[i])

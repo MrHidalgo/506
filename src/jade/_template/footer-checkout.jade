@@ -1,0 +1,40 @@
+
+.footer.footer_checkout
+    .footer__top
+        .container.clearfix
+            .footer_row.footer_row-curr-lang
+
+                p(
+                    class="footer-menu__title"
+                )
+                    span(
+                        class="footer-menu__title-text"
+                        data-id="Change Country & Currency"
+                    )!= "Change Country & Currency"
+                    i.footer-menu__title-icon
+
+
+            .footer_row
+                include ./_macros/footer/footer-menu-0
+
+            .footer_row
+                include ./_macros/footer/footer-menu-1
+
+            .footer_row
+                include support
+
+            .footer_row.footer_row-acc
+                p(
+                    class="support__title"
+                    data-id="Support"
+                )!= "Support"
+                i.support__icon-arr
+
+
+            .footer__tool-free
+                include tollfree
+
+    .footer__bottom
+        .container.clearfix
+
+            include copyright
